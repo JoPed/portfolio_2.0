@@ -1,0 +1,22 @@
+//*Colors
+$fullWhite: rgb(255,255,255);
+$white: rgba(255,255,255,.83); 
+$orange: rgba(214,90,49,.83);
+$grey: rgba(57,62,70,.83);
+$darkGrey: rgb(34,40,49);
+
+
+
+$col_header: $grey;
+$col_navbar_title: $fullWhite;
+$col_navbar_items: $orange;
+$col_navbar_items-highlighted: $white;
+
+
+//*Fonts
+@font-face {
+    font-family: "BAHNSCHRIFT";
+    src: url("/assets/fonts/BAHNSCHRIFT.TTF");
+}
+
+$font-headings: "BAHNSCHRIFT";
