@@ -2,10 +2,17 @@
   font-family: "BAHNSCHRIFT";
   src: url("/assets/fonts/BAHNSCHRIFT.TTF");
 }
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/assets/fonts/SourceCodePro.ttf");
+}
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
+  color: rgba(255, 255, 255, 0.83);
+  background-color: rgb(34, 40, 49);
+  font-family: "SourceCodePro";
 }
 
 *,
@@ -17,28 +24,50 @@ html {
   padding: 0;
 }
 
+/* #region Main elements */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#mainContent {
+  background-color: rgba(57, 62, 70, 0.83);
+}
+
+/* #endregion */
 /* #region Text */
 h1 {
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
+  color: rgba(214, 90, 49, 0.83);
+  font-size: 4rem;
   font-family: "BAHNSCHRIFT";
 }
 
 #navbar h1 {
   text-transform: uppercase;
   margin-bottom: 15px;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+
+.mainText {
+  font-size: clamp(15px, 1rem + 0.6vw, 2rem);
+  white-space: pre-line;
+}
+
+.ruler {
+  border: 1px solid rgba(214, 90, 49, 0.83);
 }
 
 /* #endregion */
+/* #region  Navigation */
 #header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
   height: 125px;
   z-index: 1;
-  background-color: rgba(57, 62, 70, 0.83);
+  margin: 0 auto 25px auto;
+  background-color: rgb(57, 62, 70);
 }
 
 #navbar {
@@ -87,14 +116,21 @@ h1 {
   padding: 15px;
 }
 
-@media only screen and (max-width: 767px) {
+/* #endregion */
+@media only screen and (max-width: 991px) {
+  /* #region  Text */
+  #about h1 {
+    text-align: center;
+  }
+  /* #endregion */
+  /* #region  Navigation */
   #hamburger {
     display: block;
   }
   .navbar__menu {
     position: fixed;
     left: -100%;
-    top: 110px;
+    top: 125px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -114,5 +150,11 @@ h1 {
   }
   .navbar__menu.active {
     left: 0;
+  }
+  /* #endregion */
+}
+@media only screen and (max-width: 767px) {
+  #portrait {
+    max-width: 420px;
   }
 }/*# sourceMappingURL=App.css.map */

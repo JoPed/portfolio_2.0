@@ -10,6 +10,8 @@ const Navbar = () => {
 
     const handleClick = () => setOpen(!open);
 
+    const closeMenu = () => setOpen(false);
+
 
     return (
         <header className="container-lg" id="header">
@@ -20,9 +22,28 @@ const Navbar = () => {
                     Pedersen
                 </h1>
                 <ul className={open ? "navbar__menu active" : "navbar__menu"}>
-                    <li><LinkScroll to="welcome" smooth={true} spy={true} duration={500} offset={-50}>Om Mig</LinkScroll></li>
-                    <li><LinkScroll to="projects" smooth={true} spy={true} duration={500} offset={-50}>Projekter</LinkScroll></li>
-                    <li><LinkRouter to="/cv">CV</LinkRouter></li>
+
+                    <li>
+                        <LinkScroll to="about" 
+                        smooth={true} 
+                        spy={true} 
+                        duration={500} 
+                        offset={-125} 
+                        onClick={closeMenu}>Om Mig</LinkScroll>
+                    </li>
+
+                    <li>
+                        <LinkScroll to="projects" 
+                        smooth={true} 
+                        spy={true} 
+                        duration={500} 
+                        offset={-50} 
+                        onClick={closeMenu}>Projekter</LinkScroll>
+                    </li>
+
+                    <li>
+                        <LinkRouter to="/cv">CV</LinkRouter>
+                    </li>
                 </ul>
                 <div id="hamburger" onClick={handleClick}>
                     {open ? <FaTimes size={30} /> : <FaBars size={30} />}
