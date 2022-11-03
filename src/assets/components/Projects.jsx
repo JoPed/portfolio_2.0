@@ -5,7 +5,7 @@ const Projects = ()=> {
     const navigate = useNavigate();
 
     const handleClick = ()=> {
-        window.open("./Projects/build/");
+        window.open("./Projects/build");
     }
 
     return (

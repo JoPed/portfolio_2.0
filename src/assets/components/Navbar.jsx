@@ -6,11 +6,11 @@ import { useState } from "react";
 
 const Navbar = () => {
 
-    const [open, setOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleClick = () => setOpen(!open);
+    const handleClick = () => setIsMenuOpen(!isMenuOpen);
 
-    const closeMenu = () => setOpen(false);
+    const closeMenu = () => setIsMenuOpen(false);
 
 
     return (
@@ -21,7 +21,7 @@ const Navbar = () => {
                     Bjørn<br />
                     Pedersen
                 </h1>
-                <ul className={open ? "navbar__menu active" : "navbar__menu"}>
+                <ul className={isMenuOpen ? "navbar__menu active" : "navbar__menu"}>
 
                     <li>
                         <LinkScroll to="about" 
@@ -46,7 +46,7 @@ const Navbar = () => {
                     </li>
                 </ul>
                 <div id="hamburger" onClick={handleClick}>
-                    {open ? <FaTimes size={30} /> : <FaBars size={30} />}
+                    {isMenuOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
                 </div>
 
             </nav>

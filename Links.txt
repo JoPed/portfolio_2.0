@@ -3,3 +3,9 @@ https://javascript.plainenglish.io/how-to-set-up-path-resolving-in-vite-ad284e0d
 https://javascript.plainenglish.io/how-you-can-serve-react-js-build-folder-from-an-express-end-point-127e236e4d67
 
 https://medium.com/@leonardobrunolima/react-tips-working-with-relative-path-using-create-react-app-fe55c5f97a21
+
+https://github.com/facebook/create-react-app/pull/7259
+
+https://tacomanator.medium.com/environments-with-create-react-app-7b645312c09d
+
+https://github.com/facebook/create-react-app/issues/8813
