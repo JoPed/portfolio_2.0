@@ -10,7 +10,7 @@ function App() {
   
 
   return (
-    <Router>
+    <Router basename="/">
       <Navbar />
 
       <Routes>

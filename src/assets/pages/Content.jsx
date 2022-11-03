@@ -10,7 +10,7 @@ const Content = () => {
     return (
         <main className='container-lg' id="mainContent" style={{height: "1500px"}}>
              <About data={contentData}/>
-            {/*<Projects /> */}
+            <Projects />
         </main>
 
     )

@@ -21,7 +21,7 @@ const About = ({ data }) => {
 
                 <Col xs={{span:12, order: 1}} md={{span: 6, offset:3}} lg={{span:6, order: 2, offset:0}}>
                     <figure className="mt-3 mx-auto" id="portrait">
-                        <img src="/assets/images/desktop/Portrait_Jonas_Bjørn_Pedersen.jpg" alt="Portrait of Jonas Bjørn Pedersen" />
+                        <img src="/assets/images/desktop/Portrait_Jonas_Pedersen.jpg" alt="Portrait of Jonas Bjørn Pedersen" />
                     </figure>
                 </Col>
             </Row>
