@@ -34,21 +34,20 @@ img {
 /* #endregion */
 
 
-
 //*Text
 /* #region Text */
 h1 {
     color: $col_headings;
-    font-size: 4rem;
     font-family: $font-headings;
+
+
+    // font-size: clamp(2.8rem, calc(3rem + 1vw), 5rem);
+}
+h2{
+    color: $col_headings;
+    font-size: clamp(2.2rem, calc(2rem + .8vw), 4rem);
 }
 
-#navbar h1 {
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    color: $col_navbar_title;
-    font-size: 3rem;
-}
 
 .mainText {
     font-size: clamp(15px, calc(1rem + .6vw), 2rem);
@@ -59,74 +58,18 @@ h1 {
     border: 1px solid $col_headings;
 }
 
-
-
-/* #endregion */
-
-//*Navigation
-/* #region  Navigation */
-#header {
-    position: sticky;
-    top: 0;
-    height: 125px;
-    z-index: 1;
-    margin: 0 auto 25px auto;
-    background-color: $col_header;
-}
-
-#navbar {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-}
-
-.navbar__menu {
-    list-style-type: none;
-    display: flex;
-
-    li {
-        padding: 15px;
-
-        a {
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: 600;
-            color: $col_navbar_items;
-            font-size: 2.5rem;
-
-            &:hover,
-            &:active {
-                color: $col_navbar_items-highlighted;
-            }
-
-            &.active {
-                color: $col_navbar_items-highlighted;
-            }
-        }
-    }
-
-    li:not(:last-child) {
-        margin-right: 5px;
-    }
-
-}
-
-#hamburger {
-    color: $col_navbar_items;
-    display: none;
-    padding: 15px;
+#aboutHeading, #projectsHeading{
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 /* #endregion */
 
+//* About
 
-
-
-
-//*About section
+#portrait img {
+    border-radius: 8px;
+}
 
 
 //*Media query
@@ -137,36 +80,11 @@ h1 {
         text-align: center;
     }
 
-
-    /* #endregion */
-
-    /* #region  Navigation */
-    #hamburger {
-        display: block;
-    }
-
-    .navbar__menu {
-        position: fixed;
-        left: -100%;
-        top: 125px;
-        flex-direction: column;
-        background-color: $col_navbar_overlay;
-        width: 100%;
-        height: 90vh;
-        z-index: 999;
-        align-items: center;
-        transition: .3s;
-        justify-content: center;
-    }
-
-    .navbar__menu.active {
-        left: 0;
-    }
-
     /* #endregion */
 }
 
 @media only screen and (max-width: 767px) {
+
     #portrait {
         max-width: 420px;
     }

@@ -1,14 +1,47 @@
-import { useNavigate } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-const Projects = ()=> {   
+
+import { useEffect } from "react";
+
+import TypeWriter from "./TypeWriter";
+
+
+
+const Projects = ({ data }) => {
+
+    let typeWriter;
+
+    useEffect(() => {
+
+        typeWriter = new TypeWriter(data.headline, "#projectsHeading", "#projects");
+    })
 
     return (
 
-        <div id="projects">
-            <h2> Projects</h2>
-            <a href="/Projects/dist/" >Tryk på mig!</a>
-        </div>
-        
+        <section id="projects" className="pb-3">
+
+            <Row>
+
+                <Col xs={{ span: 12, order: 2 }} lg={{ span: 6, order: 1, offset: 1 }}>
+                    <h2
+                        id="projectsHeading"
+                        style={{ marginBottom: "50px" }}>
+
+                        {data.headline}
+
+                    </h2>
+
+
+                    <a href="/Projects/dist/" style={{ fontSize: "2rem", backgroundColor: "#ccc" }}>Tryk på mig!</a>
+                </Col>
+            </Row>
+
+
+            
+        </section>
+
     )
 }
 
