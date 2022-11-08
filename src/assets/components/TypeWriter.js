@@ -10,7 +10,7 @@ class TypeWriter {
 
 
         gsap.set(".blinkCursorEnd", {
-            backgroundColor: "rgba(214,90,49,.83)",
+            backgroundColor: "#F28705",
             width: "2px",
             height: "35px"
         })
@@ -21,7 +21,7 @@ class TypeWriter {
         });
 
         gsap.set(".blinkCursorStart", {
-            backgroundColor: "rgba(214,90,49,.83)",
+            backgroundColor: "#F28705",
             width: "2px",
             height: "35px",
             opacity: 1
@@ -31,13 +31,13 @@ class TypeWriter {
         gsap.to(".blinkCursorStart", {
             backgroundColor: "transparent",
             duration: .5,
-            repeat: 10,
+            repeat: 5,
             yoyo: true,
             ease: "steps(1)",
             onComplete: () => {
                 this.makeTypeWritingEffect();
             }
-        });     
+        });
 
 
     }
@@ -45,9 +45,10 @@ class TypeWriter {
     makeTypeWritingEffect() {
 
         gsap.to(".blinkCursorStart", {
-            opacity: 0
+            opacity: 0,
+            duration: .1
         })
-        
+
         gsap.to(".blinkCursorEnd", {
             backgroundColor: "transparent",
             duration: .5,
@@ -55,23 +56,17 @@ class TypeWriter {
             yoyo: true,
             ease: "steps(1)"
         });
-        
-        
-        gsap.to(this.elemSelector, {
-            color: "rgba(214,90,49,.83)",
-            duration: 1,
-            onComplete: () => {
 
-                gsap.to(this.elemSelector, {
-                    width: `${this.heading.length + 1}ch`,
-                    duration: 2,
-                    ease: `steps(${this.heading.length})`
-                })
-            }
+        gsap.to(this.elemSelector, {
+            color: "#F28705"
         })
 
-       
+        gsap.to(this.elemSelector, {
+            width: `${this.heading.length + 1}ch`,
+            duration: 2,
+            ease: `steps(${this.heading.length})`
 
+        })
     }
 
 };

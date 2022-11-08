@@ -15,11 +15,7 @@
     height: 150px;
     z-index: 1;
     margin: 0 auto 75px auto;
-    
-}
 
-.headerOnScroll{    
-    background: $col_header;
 }
 
 #navbar {
@@ -51,7 +47,9 @@
             }
 
             &.active {
-                color: $col_navbar_items-highlighted;
+                font-weight: 700;
+                padding-bottom: 10px;
+                border-bottom: 3px solid $col_navbar_items-highlighted;
             }
         }
     }
@@ -68,6 +66,14 @@
     padding: 15px;
 }
 
+/* #region  On scroll */
+.headerOnScroll{    
+    background: $col_header;
+    transform: translateY(-50px);
+}
+
+/* #endregion */
+
 
 //*Media query
 @media only screen and (max-width: 991px) {
@@ -79,7 +85,7 @@
     .navbar__menu {
         position: fixed;
         left: -100%;
-        top: 125px;
+        top: 150px;
         flex-direction: column;
         background-color: $col_navbar_overlay;
         width: 100%;

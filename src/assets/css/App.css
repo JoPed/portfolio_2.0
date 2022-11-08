@@ -10,7 +10,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 10px;
-  color: rgba(255, 255, 255, 0.83);
+  color: #F2F2F0;
   background-color: rgb(57, 62, 70);
   font-family: "SourceCodePro";
 }
@@ -38,12 +38,12 @@ img {
 /* #endregion */
 /* #region Text */
 h1 {
-  color: rgba(214, 90, 49, 0.83);
+  color: #F28705;
   font-family: "SourceCodePro";
 }
 
 h2 {
-  color: rgba(214, 90, 49, 0.83);
+  color: #F28705;
   font-size: clamp(2.2rem, 2rem + 0.8vw, 4rem);
 }
 
@@ -53,7 +53,7 @@ h2 {
 }
 
 .ruler {
-  border: 1px solid rgba(214, 90, 49, 0.83);
+  border: 1px solid #F28705;
 }
 
 #aboutHeading, #projectsHeading {

@@ -9,7 +9,7 @@
 #navbar h1 {
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: rgb(255, 255, 255);
+  color: #F2F2F0;
   font-size: 3rem;
 }
 
@@ -19,11 +19,6 @@
   height: 150px;
   z-index: 1;
   margin: 0 auto 75px auto;
-}
-
-.headerOnScroll {
-  background: -webkit-gradient(linear, left top, right top, from(rgb(238, 238, 238)), color-stop(25%, rgb(34, 40, 49)), color-stop(75%, rgb(34, 40, 49)), to(rgb(238, 238, 238)));
-  background: linear-gradient(90deg, rgb(238, 238, 238) 0%, rgb(34, 40, 49) 25%, rgb(34, 40, 49) 75%, rgb(238, 238, 238) 100%);
 }
 
 #navbar {
@@ -53,25 +48,36 @@
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
-  color: rgba(214, 90, 49, 0.83);
+  color: #F2F2F0;
   font-size: 2.5rem;
 }
 .navbar__menu li a:hover, .navbar__menu li a:active {
-  color: rgba(255, 255, 255, 0.83);
+  color: #F2F2F0;
 }
 .navbar__menu li a.active {
-  color: rgba(255, 255, 255, 0.83);
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #F2F2F0;
 }
 .navbar__menu li:not(:last-child) {
   margin-right: 5px;
 }
 
 #hamburger {
-  color: rgba(214, 90, 49, 0.83);
+  color: #F2F2F0;
   display: none;
   padding: 15px;
 }
 
+/* #region  On scroll */
+.headerOnScroll {
+  background: -webkit-gradient(linear, left top, right top, from(#A67153), color-stop(50%, #F28705), to(#A64F03));
+  background: linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%);
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+/* #endregion */
 @media only screen and (max-width: 991px) {
   #hamburger {
     display: block;
@@ -79,7 +85,7 @@
   .navbar__menu {
     position: fixed;
     left: -100%;
-    top: 125px;
+    top: 150px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
