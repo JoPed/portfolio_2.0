@@ -15,7 +15,11 @@ const Projects = ({ data }) => {
 
     useEffect(() => {
 
-        typeWriter = new TypeWriter(data.headline, "#projectsHeading", "#projects");
+        typeWriter = new TypeWriter(data.headline, "#projectsHeading");
+
+        return () => {
+            typeWriter = null;
+        }
     })
 
     return (
@@ -29,12 +33,14 @@ const Projects = ({ data }) => {
                         id="projectsHeading"
                         style={{ marginBottom: "50px" }}>
 
-                        {data.headline}
+                            {data.headline}
+
+                        <span className="blinkCursor" />
 
                     </h2>
 
 
-                    <a href="/Projects/dist/" style={{ fontSize: "2rem", backgroundColor: "#ccc" }}>Tryk på mig!</a>
+                    <a href="" style={{ fontSize: "2rem", backgroundColor: "#ccc" }}>Tryk på mig!</a>
                 </Col>
             </Row>
 

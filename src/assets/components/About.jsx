@@ -11,21 +11,26 @@ const About = ({ data }) => {
 
     useEffect(() => {
 
-        console.log(data.headline);
-        typeWriter = new TypeWriter(data.headline, "#aboutHeading", "#about");
+        typeWriter = new TypeWriter(data.headline, "#aboutHeading");
+
     })
 
 
 
     return (
         <section id="about" className="pb-3">
+
             <Row>
                 <Col xs={{ span: 12, order: 2 }} lg={{ span: 6, order: 1, offset: 1 }}>
+
+
                     <h2
                         id="aboutHeading"
                         className="mt-3">
 
+                        <span className="blinkCursorStart" />
                         {data.headline}
+                        <span className="blinkCursorEnd" />
 
                     </h2>
 

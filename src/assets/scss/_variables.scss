@@ -8,14 +8,17 @@ $darkGrey: rgb(34,40,49);
 
 
 
-$col_header: $fullGrey;
+
+
+// $col_header: linear-gradient(90deg, rgba(214,90,49,1) 0%,rgba(57,62,70,1) 33%, rgba(255,255,255,1) 49%, rgba(57,62,70,1) 66%, rgba(214,90,49,1) 100%);
+$col_header: linear-gradient(90deg, rgba(238,238,238,1) 0%, rgba(34,40,49,1) 25%, rgba(34,40,49,1) 75%, rgba(238,238,238,1) 100%);
 $col_navbar_title: $fullWhite;
 $col_navbar_items: $orange;
 $col_navbar_items-highlighted: $white;
 $col_navbar_overlay: $grey;
 
 $col_outerContent: $darkGrey;
-$col_innerContent: $grey;
+$col_innerContent: $fullGrey;
 
 $col_mainText: $white;
 $col_headings: $orange;

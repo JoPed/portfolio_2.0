@@ -2,21 +2,45 @@ import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkRouter } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const [scrolledYPos,setScrolledYPos] = useState(0); 
+
+    const headerRef = useRef();
+
     const handleClick = () => setIsMenuOpen(!isMenuOpen);
 
     const closeMenu = () => setIsMenuOpen(false);
 
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        setScrolledYPos(scrollY);
+
+        if(scrollY > 75){
+            headerRef.current.classList.add("headerOnScroll");
+        }
+        else{
+            headerRef.current.classList.remove("headerOnScroll");
+
+        }
+        
+    }
+
+    useEffect(() => {
+
+        window.addEventListener("scroll", handleScroll);
+
+    }, [scrolledYPos])
+
 
     return (
-        <header className="container-lg" id="header">
+        <header className="container-fluid" id="header" ref={headerRef}>
 
-            <nav className="" id="navbar">
+            <nav className="container-lg" id="navbar">
                 <h1>Jonas<br />
                     Bjørn<br />
                     Pedersen
@@ -28,7 +52,7 @@ const Navbar = () => {
                         smooth={true} 
                         spy={true} 
                         duration={500} 
-                        offset={-125} 
+                        offset={-150} 
                         onClick={closeMenu}>Om Mig</LinkScroll>
                     </li>
 
@@ -37,7 +61,7 @@ const Navbar = () => {
                         smooth={true} 
                         spy={true} 
                         duration={500} 
-                        offset={-50} 
+                        offset={-150} 
                         onClick={closeMenu}>Projekter</LinkScroll>
                     </li>
 

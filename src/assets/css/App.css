@@ -11,7 +11,7 @@ html {
           box-sizing: border-box;
   font-size: 10px;
   color: rgba(255, 255, 255, 0.83);
-  background-color: rgb(34, 40, 49);
+  background-color: rgb(57, 62, 70);
   font-family: "SourceCodePro";
 }
 
@@ -32,7 +32,7 @@ img {
 }
 
 #mainContent {
-  background-color: rgba(57, 62, 70, 0.83);
+  background-color: rgb(57, 62, 70);
 }
 
 /* #endregion */
@@ -59,6 +59,13 @@ h2 {
 #aboutHeading, #projectsHeading {
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
+}
+
+.blinkCursorEnd, .blinkCursorStart {
+  display: inline-block;
+  position: absolute;
+  top: 10%;
 }
 
 /* #endregion */

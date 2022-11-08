@@ -12,10 +12,14 @@
 #header {
     position: sticky;
     top: 0;
-    height: 125px;
+    height: 150px;
     z-index: 1;
-    margin: 0 auto 25px auto;
-    background-color: $col_header;
+    margin: 0 auto 75px auto;
+    
+}
+
+.headerOnScroll{    
+    background: $col_header;
 }
 
 #navbar {

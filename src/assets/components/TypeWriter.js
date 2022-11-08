@@ -3,65 +3,76 @@ import { ScrollTrigger } from 'gsap/all';
 
 class TypeWriter {
 
-    constructor(headline, selector, trigger) {
-        gsap.registerPlugin(ScrollTrigger);
+    constructor(headline, selector) {
 
         this.heading = headline;
         this.elemSelector = selector;
-        let tiggerElem = trigger;       
-        
 
 
-        if (this.elemSelector === "#aboutHeading" || this.elemSelector === "#projectsHeading") {            
+        gsap.set(".blinkCursorEnd", {
+            backgroundColor: "rgba(214,90,49,.83)",
+            width: "2px",
+            height: "35px"
+        })
 
-            this.makeTypeWritingEffect();
+        gsap.set(this.elemSelector, {
+            width: "2px",
+            color: "transparent"
+        });
 
-        }
-        else {
+        gsap.set(".blinkCursorStart", {
+            backgroundColor: "rgba(214,90,49,.83)",
+            width: "2px",
+            height: "35px",
+            opacity: 1
 
-            gsap.set(this.elemSelector, {
-                width: `${this.heading.length + .2}ch`,
-                borderRight: "2px solid rgba(214,90,49,.83)"
-            });
+        });
 
-            ScrollTrigger.create({
+        gsap.to(".blinkCursorStart", {
+            backgroundColor: "transparent",
+            duration: .5,
+            repeat: 10,
+            yoyo: true,
+            ease: "steps(1)",
+            onComplete: () => {
+                this.makeTypeWritingEffect();
+            }
+        });     
 
-                trigger: tiggerElem,
-                start: "70px 95%",
-                markers: true,
-                onEnter: () => this.makeTypeWritingEffect()
-
-            })
-        }
 
     }
 
-    makeTypeWritingEffect() {  
-        
-        gsap.set(this.elemSelector, {
-            width: `${this.heading.length + .2}ch`,
-            borderRight: "2px solid rgba(214,90,49,.83)"
-        });    
+    makeTypeWritingEffect() {
 
-
-        gsap.from(this.elemSelector, {
-            width: "0ch",
-            duration: 2,
-            ease: `steps(${this.heading.length})`
+        gsap.to(".blinkCursorStart", {
+            opacity: 0
         })
-
-        gsap.to(this.elemSelector, {
-            borderRightColor: "transparent",
+        
+        gsap.to(".blinkCursorEnd", {
+            backgroundColor: "transparent",
             duration: .5,
             repeat: -1,
             yoyo: true,
             ease: "steps(1)"
         });
+        
+        
+        gsap.to(this.elemSelector, {
+            color: "rgba(214,90,49,.83)",
+            duration: 1,
+            onComplete: () => {
+
+                gsap.to(this.elemSelector, {
+                    width: `${this.heading.length + 1}ch`,
+                    duration: 2,
+                    ease: `steps(${this.heading.length})`
+                })
+            }
+        })
+
+       
 
     }
-
-
-
 
 };
 
