@@ -49,6 +49,12 @@
           align-items: flex-end;
 }
 
+#header.headerOnScroll #navbar {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .navbar__menu {
   list-style-type: none;
   display: -webkit-box;

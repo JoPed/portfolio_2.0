@@ -37,7 +37,12 @@
 
 }
 
+#header.headerOnScroll #navbar{
+    justify-content: center;
+}
+
 .navbar__menu {
+
     list-style-type: none;
     display: flex;
 
