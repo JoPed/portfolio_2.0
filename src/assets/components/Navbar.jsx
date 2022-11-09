@@ -30,22 +30,16 @@ const Navbar = () => {
         const scrollY = window.scrollY;
         setScrolledYPos(scrollY);
 
-        console.log(scrollY);
-
         if (scrollY > 75) {
 
             //* The header styling happens inside changeHeadingOnScroll in the gsap onComplete
             headerRef.current.children[0].children[0].style.display = "none";
-            // headerRef.current.style.background = "linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%)";
-            // headerRef.current.style.transform = "translateY(-50px)";
 
             headerRef.current.classList.add("headerOnScroll");
 
         }
         else {
 
-            // headerRef.current.style.background = "transparent";
-            // headerRef.current.style.transform = "translateY(0px)";
             headerRef.current.children[0].children[0].style.display = "block";
             headerRef.current.classList.remove("headerOnScroll");
 
@@ -65,12 +59,13 @@ const Navbar = () => {
 
     useEffect(() => {
 
+        /* Removing the class on every render to make sure the header only has default values. 
+            This cannot happen in the other useEffect, since that will run every time the y scroll pos changes. 
+        */
         if(headerRef.current.classList.contains("headerOnScroll")){
             headerRef.current.classList.remove("headerOnScroll");
         }
 
-        // headerRef.current.style.background = "transparent";
-        // headerRef.current.style.transform = "translateY(0px)";
 
     }, [])
 

@@ -47,22 +47,43 @@ h2 {
   font-size: clamp(2.2rem, 2rem + 0.8vw, 4rem);
 }
 
+h3 {
+  font-size: clamp(1.8rem, 2rem + 0.8vw, 2.5rem);
+}
+
 .mainText {
   font-size: clamp(15px, 1rem + 0.6vw, 2rem);
   white-space: pre-line;
+}
+
+.card__description,
+.card__details {
+  font-size: clamp(12px, 1rem + 0.5vw, 1.8rem);
+  white-space: pre-line;
+}
+
+.card__btn {
+  font-size: clamp(1.6rem, 1.5rem + 0.8vw, 2rem);
+  color: #F2F2F0;
+}
+
+.rulerRow {
+  margin-top: 4rem;
 }
 
 .ruler {
   border: 1px solid #F28705;
 }
 
-#aboutHeading, #projectsHeading {
+#aboutHeading,
+#projectsHeading {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
 }
 
-.blinkCursorEnd, .blinkCursorStart {
+.heading__blinkCursorEnd,
+.heading__blinkCursorStart {
   display: inline-block;
   position: absolute;
   top: 10%;
@@ -70,7 +91,57 @@ h2 {
 
 /* #endregion */
 #portrait img {
-  border-radius: 8px;
+  border-radius: 4px;
+}
+
+.card {
+  width: 100%;
+  min-height: 500px;
+  background-color: #A67153;
+  border-radius: 4px;
+}
+.card img {
+  border-radius: 4px 4px 0 0;
+}
+.card div {
+  width: 100%;
+  min-height: 299px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card__title {
+  margin: 0 15px;
+}
+
+.card__description {
+  margin: 0 15px;
+}
+
+.card__details {
+  margin: 0 15px;
+  display: none;
+}
+
+.card__btn {
+  width: calc(100% - 30px);
+  height: 45px;
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid rgba(242, 242, 240, 0.4);
+}
+.card__btn:hover {
+  background-color: rgba(242, 242, 240, 0.2);
 }
 
 @media only screen and (max-width: 991px) {

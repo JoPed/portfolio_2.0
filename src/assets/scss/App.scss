@@ -43,9 +43,14 @@ h1 {
 
     // font-size: clamp(2.8rem, calc(3rem + 1vw), 5rem);
 }
-h2{
+
+h2 {
     color: $col_headings;
     font-size: clamp(2.2rem, calc(2rem + .8vw), 4rem);
+}
+
+h3 {
+    font-size: clamp(1.8rem, calc(2rem + .8vw), 2.5rem);
 }
 
 
@@ -54,17 +59,34 @@ h2{
     white-space: pre-line;
 }
 
-.ruler{
+.card__description,
+.card__details {
+    font-size: clamp(12px, calc(1rem + .5vw), 1.8rem);
+    white-space: pre-line;
+}
+
+.card__btn {
+    font-size: clamp(1.6rem, calc(1.5rem + .8vw), 2rem);
+    color: $col_mainText;
+}
+
+.rulerRow {
+    margin-top: 4rem;
+}
+
+.ruler {
     border: 1px solid $col_headings;
 }
 
-#aboutHeading, #projectsHeading{
+#aboutHeading,
+#projectsHeading {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
 }
 
-.blinkCursorEnd, .blinkCursorStart{   
+.heading__blinkCursorEnd,
+.heading__blinkCursorStart {
     display: inline-block;
     position: absolute;
     top: 10%;
@@ -75,7 +97,58 @@ h2{
 //* About
 
 #portrait img {
-    border-radius: 8px;
+    border-radius: 4px;
+}
+
+//*Projects
+.card {
+    width: 100%;
+    min-height: 500px;
+    background-color: #A67153;
+    border-radius: 4px;
+
+
+    img {
+        border-radius: 4px 4px 0 0;
+    }
+
+    div {
+        width: 100%;
+        min-height: 299px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+.card__title {
+    margin: 0 15px;
+}
+
+.card__description {
+    margin: 0 15px;
+}
+
+.card__details {
+    margin: 0 15px;
+    display: none;
+}
+
+.card__btn {
+    width: calc(100% - 30px);
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid rgba($white, .4);
+
+
+    &:hover {
+        background-color: rgba($white, .2);
+    }
+
+
 }
 
 
@@ -83,7 +156,7 @@ h2{
 @media only screen and (max-width: 991px) {
 
     /* #region  Text */
-    #about h1{
+    #about h1 {
         text-align: center;
     }
 

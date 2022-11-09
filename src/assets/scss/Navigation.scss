@@ -14,7 +14,7 @@
     top: 0;
     height: 150px;
     z-index: 1;
-    margin: 0 auto 75px auto;
+    margin: 0 auto 100px auto;
     transform: translateX(0);
     transition: transform 1s;
 
@@ -23,7 +23,6 @@
         background: $col_header;
         transform: translateY(-50px);
     }
-
     /* #endregion */
 
 }
@@ -62,7 +61,6 @@
             }
 
             &.active {
-                font-weight: 700;
                 padding-bottom: 10px;
                 border-bottom: 3px solid $col_navbar_items-highlighted;
             }

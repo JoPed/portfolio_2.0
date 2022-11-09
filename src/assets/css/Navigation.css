@@ -18,7 +18,7 @@
   top: 0;
   height: 150px;
   z-index: 1;
-  margin: 0 auto 75px auto;
+  margin: 0 auto 100px auto;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition: -webkit-transform 1s;
@@ -75,7 +75,6 @@
   color: #F2F2F0;
 }
 .navbar__menu li a.active {
-  font-weight: 700;
   padding-bottom: 10px;
   border-bottom: 3px solid #F2F2F0;
 }

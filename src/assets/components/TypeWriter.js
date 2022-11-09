@@ -1,15 +1,17 @@
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 
 class TypeWriter {
+
 
     constructor(headline, selector) {
 
         this.heading = headline;
         this.elemSelector = selector;
 
+    }
 
-        gsap.set(".blinkCursorEnd", {
+    setInitialValues() {
+        gsap.set(".heading__blinkCursorEnd", {
             backgroundColor: "#F28705",
             width: "2px",
             height: "35px"
@@ -20,7 +22,7 @@ class TypeWriter {
             color: "transparent"
         });
 
-        gsap.set(".blinkCursorStart", {
+        gsap.set(".heading__blinkCursorStart", {
             backgroundColor: "#F28705",
             width: "2px",
             height: "35px",
@@ -28,7 +30,7 @@ class TypeWriter {
 
         });
 
-        gsap.to(".blinkCursorStart", {
+        gsap.to(".heading__blinkCursorStart", {
             backgroundColor: "transparent",
             duration: .5,
             repeat: 5,
@@ -38,18 +40,17 @@ class TypeWriter {
                 this.makeTypeWritingEffect();
             }
         });
-
-
     }
 
+    //Called inside setInitialValues
     makeTypeWritingEffect() {
 
-        gsap.to(".blinkCursorStart", {
+        gsap.to(".heading__blinkCursorStart", {
             opacity: 0,
             duration: .1
         })
 
-        gsap.to(".blinkCursorEnd", {
+        gsap.to(".heading__blinkCursorEnd", {
             backgroundColor: "transparent",
             duration: .5,
             repeat: -1,
@@ -61,9 +62,18 @@ class TypeWriter {
             color: "#F28705"
         })
 
+        //*Check length to animate and adjust duration acordionly
+        let durationTime = 0;
+        if (this.heading.length > 10)
+            durationTime = 2;
+
+        else
+            durationTime = .8;
+
+
         gsap.to(this.elemSelector, {
             width: `${this.heading.length + 1}ch`,
-            duration: 2,
+            duration: durationTime,
             ease: `steps(${this.heading.length})`
 
         })

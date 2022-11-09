@@ -13,6 +13,8 @@ const About = ({ data }) => {
 
         typeWriter = new TypeWriter(data.headline, "#aboutHeading");
 
+        typeWriter.setInitialValues();
+
     })
 
 
@@ -28,9 +30,9 @@ const About = ({ data }) => {
                         id="aboutHeading"
                         className="mt-3">
 
-                        <span className="blinkCursorStart" />
+                        <span className="heading__blinkCursorStart" />
                         {data.headline}
-                        <span className="blinkCursorEnd" />
+                        <span className="heading__blinkCursorEnd" />
 
                     </h2>
 
@@ -56,7 +58,7 @@ const About = ({ data }) => {
 
             </Row>
 
-            <Row className="mt-5">
+            <Row className="rulerRow">
                 <Col xs={12} md={{ span: 10, offset: 1 }}>
                     <hr className="ruler" />
                 </Col>
