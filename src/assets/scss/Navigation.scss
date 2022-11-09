@@ -15,6 +15,16 @@
     height: 150px;
     z-index: 1;
     margin: 0 auto 75px auto;
+    transform: translateX(0);
+    transition: transform 1s;
+
+    /* #region  On scroll */
+    &.headerOnScroll {
+        background: $col_header;
+        transform: translateY(-50px);
+    }
+
+    /* #endregion */
 
 }
 
@@ -66,13 +76,7 @@
     padding: 15px;
 }
 
-/* #region  On scroll */
-.headerOnScroll{    
-    background: $col_header;
-    transform: translateY(-50px);
-}
 
-/* #endregion */
 
 
 //*Media query

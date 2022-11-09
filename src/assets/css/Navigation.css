@@ -19,6 +19,20 @@
   height: 150px;
   z-index: 1;
   margin: 0 auto 75px auto;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  /* #region  On scroll */
+  /* #endregion */
+}
+#header.headerOnScroll {
+  background: -webkit-gradient(linear, left top, right top, from(#A67153), color-stop(50%, #F28705), to(#A64F03));
+  background: linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%);
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
 }
 
 #navbar {
@@ -69,15 +83,6 @@
   padding: 15px;
 }
 
-/* #region  On scroll */
-.headerOnScroll {
-  background: -webkit-gradient(linear, left top, right top, from(#A67153), color-stop(50%, #F28705), to(#A64F03));
-  background: linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%);
-  -webkit-transform: translateY(-50px);
-          transform: translateY(-50px);
-}
-
-/* #endregion */
 @media only screen and (max-width: 991px) {
   #hamburger {
     display: block;

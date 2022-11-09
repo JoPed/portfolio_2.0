@@ -16,6 +16,8 @@ const Navbar = () => {
 
     const headerRef = useRef();
 
+    const timeLine = gsap.timeline();
+
     /* #region  Menu handling */
     const handleClick = () => setIsMenuOpen(!isMenuOpen);
 
@@ -28,41 +30,49 @@ const Navbar = () => {
         const scrollY = window.scrollY;
         setScrolledYPos(scrollY);
 
+        console.log(scrollY);
+
         if (scrollY > 75) {
 
             //* The header styling happens inside changeHeadingOnScroll in the gsap onComplete
-            changeHeadingOnScroll(0, "Power1.easeIn");
+            headerRef.current.children[0].children[0].style.display = "none";
+            // headerRef.current.style.background = "linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%)";
+            // headerRef.current.style.transform = "translateY(-50px)";
 
-            
             headerRef.current.classList.add("headerOnScroll");
 
         }
         else {
 
-            changeHeadingOnScroll(1, "Power1.easeIn");
+            // headerRef.current.style.background = "transparent";
+            // headerRef.current.style.transform = "translateY(0px)";
+            headerRef.current.children[0].children[0].style.display = "block";
             headerRef.current.classList.remove("headerOnScroll");
 
         }
-
-    }
-
-    const changeHeadingOnScroll = (opacity, ease, addClass) => {
-
-        gsap.to(headerRef.current.children[0].children[0], {
-            opacity: opacity,
-            duration: 1,
-            ease: ease
-
-        })
-
-    }
+    }    
 
 
     useEffect(() => {
 
         window.addEventListener("scroll", handleStylingOnScroll);
 
+        return () => {
+            window.removeEventListener("scroll", handleStylingOnScroll);
+        }
+
     }, [scrolledYPos])
+
+    useEffect(() => {
+
+        if(headerRef.current.classList.contains("headerOnScroll")){
+            headerRef.current.classList.remove("headerOnScroll");
+        }
+
+        // headerRef.current.style.background = "transparent";
+        // headerRef.current.style.transform = "translateY(0px)";
+
+    }, [])
 
 
     return (
