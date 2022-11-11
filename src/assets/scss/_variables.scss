@@ -1,23 +1,26 @@
 //*Colors
 $white: #F2F2F0;
 $orange: #F28705;
-$lightGrey: #D9CDBF;
+$brown: #A67153;
+$redBrownish: #A64F03;
 $grey: rgba(57,62,70,.83);
 $fullGrey: rgb(57,62,70);
-$darkGrey: rgb(34,40,49);
 
 
-$col_header: linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%);
+$col_header: linear-gradient(90deg, $brown 0%, $orange 50%, $redBrownish 100%);
 $col_navbar_title: $white;
 $col_navbar_items: $white;
 $col_navbar_items-highlighted: $white;
 $col_navbar_overlay: $grey;
 
-$col_outerContent: $darkGrey;
-$col_innerContent: $fullGrey;
+$col_content: $fullGrey;
 
 $col_mainText: $white;
 $col_headings: $orange;
+
+$col_borderCard: $orange;
+$col_borderCardBtn: rgba($white, .25);
+$col_borderCardBtnHover: rgba($white, .1);
 
 
 //*Fonts
@@ -31,5 +34,7 @@ $col_headings: $orange;
     src: url("/assets/fonts/SourceCodePro.ttf");
 }
 
+
+$font-title: "BAHNSCHRIFT";
 $font-headings: "SourceCodePro";
 $font-text: "SourceCodePro";

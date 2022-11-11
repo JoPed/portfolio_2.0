@@ -2,16 +2,19 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import TypeWriter from "./TypeWriter";
 import { useEffect } from "react";
 
-const About = ({ data }) => {
+
+import TypeWriter from "../TypeWriter";
+import { aboutContent } from "./AboutContent";
+
+const About = () => {
 
     let typeWriter;
 
     useEffect(() => {
 
-        typeWriter = new TypeWriter(data.headline, "#aboutHeading");
+        typeWriter = new TypeWriter(aboutContent.headline, "#aboutHeading");
 
         typeWriter.setInitialValues();
 
@@ -31,7 +34,7 @@ const About = ({ data }) => {
                         className="mt-3">
 
                         <span className="heading__blinkCursorStart" />
-                        {data.headline}
+                        {aboutContent.headline}
                         <span className="heading__blinkCursorEnd" />
 
                     </h2>
@@ -39,7 +42,7 @@ const About = ({ data }) => {
                     <Row>
                         <Col>
                             <article>
-                                <p className="mainText">{data.paragraphs.map(item => item)}</p>
+                                <p className="mainText">{aboutContent.paragraphs.map(item => item)}</p>
                             </article>
                         </Col>
                     </Row>
