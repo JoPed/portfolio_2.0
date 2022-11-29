@@ -48,7 +48,7 @@ const About = () => {
                     </Row>
                 </Col>
 
-                <Col xs={{ span: 12, order: 1 }} md={{ span: 6, offset: 3 }} lg={{ span: 4, order: 2, offset: 0 }}>
+                <Col xs={{ span: 12, order: 1 }} md={{ span: 6, offset: 3 }} lg={{ span: 5, order: 2, offset: 0 }}>
                     <figure className="mt-3" id="portrait">
 
                         <img

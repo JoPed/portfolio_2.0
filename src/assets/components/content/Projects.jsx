@@ -111,9 +111,9 @@ const Projects = () => {
 
                             <Col
                                 md={{ span: 8, offset: card.hasOwnProperty("mdColOffset") ? card.mdColOffset : "" }}
-                                xl={{ span: card.xlColSpan, offset: card.hasOwnProperty("xlColOffset") ? card.xlColOffset : "" }}
+                                xl={{ span: 4, offset: card.xlColOffset}}
                                 key={card.uniqueID}
-                                className="mb-4 px-md-5 px-lg-0"
+                                className={`mb-4 px-md-5 px-lg-0 ${card.hasOwnProperty("className") ? card.className : ""}` }
                             >
 
                                 <section className="card">

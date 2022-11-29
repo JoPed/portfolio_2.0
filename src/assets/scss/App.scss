@@ -64,19 +64,6 @@ h3 {
     white-space: pre-line;
 }
 
-.card__btn {
-    font-size: clamp(1.6rem, calc(1.5rem + .8vw), 2rem);
-    color: $col_mainText;
-}
-
-.rulerRow {
-    margin-top: 4rem;
-}
-
-.ruler {
-    border: 1px solid $col_headings;
-}
-
 #aboutHeading,
 #projectsHeading {
     white-space: nowrap;
@@ -93,17 +80,28 @@ h3 {
 
 /* #endregion */
 
-//* About
+.rulerRow {
+    margin-top: 10rem;
+}
 
+.ruler {
+    border: 1px solid $col_headings;
+}
+
+//* About
 #portrait img {
     border-radius: 4px;
 }
-
 //*Projects
-#projectsHeading{
+#projects{
+    margin-top: 10rem;
+}
+
+#projectsHeading {
     margin: auto;
 }
 
+/* #region  card */
 .card {
     width: 100%;
     min-height: 500px;
@@ -118,7 +116,7 @@ h3 {
         border-radius: 4px 4px 0 0;
     }
 
-    &:hover{
+    &:hover {
         box-shadow: 2px 6px 10px #A64F03;
     }
 }
@@ -145,6 +143,8 @@ h3 {
     border-radius: 4px;
     border: 1px solid $col_borderCardBtn;
     cursor: pointer;
+    font-size: clamp(1.6rem, calc(1.5rem + .8vw), 2rem);
+    color: $col_mainText;
 
     &:hover {
         background-color: $col_borderCardBtnHover;
@@ -153,13 +153,15 @@ h3 {
 
 }
 
+/* #endregion */
+
 
 //*Media query
 @media only screen and (max-width: 991px) {
 
     /* #region  Text */
-    #about h1 {
-        text-align: center;
+    #aboutHeading {
+        margin-inline: auto;
     }
 
     /* #endregion */
@@ -172,14 +174,3 @@ h3 {
     }
 
 }
-
-@media only screen and (min-width: 1400px) {
-
-    .card{
-        margin-inline: auto;
-    }
-
-
-    
-}
-
