@@ -9,8 +9,9 @@ export const projectsContent = {
             title: "Projekt 1",
             description: "This is a short description of the project. Maybe about a sentence or to.Maybe about a sentence or to.",
             details: "This is the details section. Maybe list technologies and in what context the projects was done.",
-            colOffset: 3,
-            colSpan: 3,
+            lgColOffset: 2,
+            lgColSpan: 4,
+            mdColOffset: 2,
             uniqueID: "project1"
 
         },
@@ -22,7 +23,8 @@ export const projectsContent = {
             title: "Projekt 2",
             description: "This is a short description of the project. Maybe about a sentence or to.Maybe about a sentence or to.",
             details: "This is the details section. Maybe list technologies and in what context the projects was done. Projekt 2",
-            colSpan: 3,
+            lgColSpan: 4,
+            mdColOffset: 2,
             uniqueID: "project2"
 
         },
@@ -34,8 +36,9 @@ export const projectsContent = {
             title: "Projekt 3",
             description: "This is a short description of the project. Maybe about a sentence or to.Maybe about a sentence or to.",
             details: "This is the details section. Maybe list technologies and in what context the projects was done. Projekt 3",
-            colOffset: 3,
-            colSpan: 3,
+            xlColOffset: 2,
+            xlColSpan: 4,
+            mdColOffset: 2,
             uniqueID: "project3"
 
         },
@@ -47,7 +50,8 @@ export const projectsContent = {
             title: "Projekt 4",
             description: "This is a short description of the project. Maybe about a sentence or to.Maybe about a sentence or to.",
             details: "This is the details section. Maybe list technologies and in what context the projects was done. Projekt 4",
-            colSpan: 3,
+            xlColSpan: 4,
+            mdColOffset: 2,
             uniqueID: "project4"
 
         }

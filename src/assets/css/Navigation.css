@@ -93,6 +93,11 @@
   #hamburger {
     display: block;
   }
+  #header.headerOnScroll #navbar {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
   .navbar__menu {
     position: fixed;
     left: -100%;

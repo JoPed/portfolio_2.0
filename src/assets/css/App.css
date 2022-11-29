@@ -159,4 +159,9 @@ h3 {
   #portrait {
     max-width: 420px;
   }
+}
+@media only screen and (min-width: 1400px) {
+  .card {
+    margin-inline: auto;
+  }
 }/*# sourceMappingURL=App.css.map */

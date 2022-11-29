@@ -90,6 +90,10 @@
         display: block;
     }
 
+    #header.headerOnScroll #navbar {
+        justify-content: flex-end;
+    }
+
     .navbar__menu {
         position: fixed;
         left: -100%;

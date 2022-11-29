@@ -58,7 +58,7 @@ const Projects = () => {
             details.style.setProperty("display", "block");
             setDetailsIsExpanded(true);
             button.textContent = "Read Less";
-            
+
         }
         else {
             details.style.setProperty("display", "none");
@@ -101,54 +101,60 @@ const Projects = () => {
 
             </Row>
 
-            <Row className="mt-5">
 
-                {
-                    projectsContent.cardData.map((card, index) => (
+            <Container fluid="lg">
 
-                        <Col lg={{ span: card.colSpan, offset: card.hasOwnProperty("colOffset") ? card.colOffset : "" }} key={card.uniqueID}>
+                <Row className="mt-5">
 
-                            {/* {console.log(index % 2 === 0)} */}
+                    {
+                        projectsContent.cardData.map((card, index) => (
 
-                            <section className="card mb-5">
+                            <Col
+                                md={{ span: 8, offset: card.hasOwnProperty("mdColOffset") ? card.mdColOffset : "" }}
+                                xl={{ span: card.xlColSpan, offset: card.hasOwnProperty("xlColOffset") ? card.xlColOffset : "" }}
+                                key={card.uniqueID}
+                                className="mb-4 px-md-5 px-lg-0"
+                            >
 
-                                <picture>
-                                    <source media="(max-width: 575px)" srcSet={card.mobileImg} />
-                                    <source media="(max-width: 991px)" srcSet={card.tabletImg} />
-                                    <source media="(min-width: 992px)" srcSet={card.pcImg} />
+                                <section className="card">
 
-                                    <img src={card.pcImg} alt={card.altText} />
+                                    <picture>
+                                        <source media="(max-width: 575px)" srcSet={card.mobileImg} />
+                                        <source media="(max-width: 991px)" srcSet={card.tabletImg} />
+                                        <source media="(min-width: 992px)" srcSet={card.pcImg} />
 
-                                </picture>
+                                        <img src={card.pcImg} alt={card.altText} />
 
-                                <h3 className="card__title">{card.title}</h3>
+                                    </picture>
 
-                                <p className="card__description">{card.description}</p>
+                                    <h3 className="card__title">{card.title}</h3>
 
-                                <p
-                                    className="card__details"
-                                    ref={ref => (cardDetailsRef.current[index] = ref)}
-                                >
-                                    {card.details}
-                                </p>
+                                    <p className="card__description">{card.description}</p>
 
-                                <button
-                                    className="card__btn"
-                                    onClick={(event) => showCardDetails(event, index)}
-                                >
-                                    Read More
-                                </button>
+                                    <p
+                                        className="card__details"
+                                        ref={ref => (cardDetailsRef.current[index] = ref)}
+                                    >
+                                        {card.details}
+                                    </p>
 
-                            </section>
-                        </Col>
+                                    <button
+                                        className="card__btn"
+                                        onClick={(event) => showCardDetails(event, index)}
+                                    >
+                                        Read More
+                                    </button>
 
-                    ))
-                }
+                                </section>
+                            </Col>
+
+                        ))
+                    }
+
+                </Row>
+            </Container>
 
 
-
-
-            </Row>
 
 
 
