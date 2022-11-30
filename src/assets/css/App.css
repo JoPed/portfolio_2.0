@@ -162,4 +162,9 @@ h3 {
   #portrait {
     max-width: 420px;
   }
+}
+@media only screen and (max-width: 485px) {
+  #projects .container-lg .row > .colOfCards.px-4 {
+    padding-inline: 1rem !important;
+  }
 }/*# sourceMappingURL=App.css.map */

@@ -21,18 +21,16 @@ const Projects = () => {
 
     const [isReadyToAnimate, setIsReadyToAnimate] = useState(false);
 
-    const [detailsIsExpanded, setDetailsIsExpanded] = useState(false);
-
     const cardDetailsRef = useRef([]);
 
     let typeWriter;
+
 
     const handleScrollTrigger = (writer) => {
         ScrollTrigger.create({
             trigger: "#projects",
             start: "top bottom-=20px",
             end: "+=100px",
-            markers: true,
             onEnter: () => {
                 setIsReadyToAnimate(true);
                 writer.setInitialValues();
@@ -56,19 +54,17 @@ const Projects = () => {
 
             // Setting the styles in the stylesheet, not inline
             details.style.setProperty("display", "block");
-            setDetailsIsExpanded(true);
             button.textContent = "Read Less";
 
         }
         else {
             details.style.setProperty("display", "none");
-            setDetailsIsExpanded(false);
             button.textContent = "Read More";
 
         }
 
     }
-
+    
 
 
     useEffect(() => {
@@ -104,16 +100,19 @@ const Projects = () => {
 
             <Container fluid="lg">
 
-                <Row className="mt-5">
+                <Row className="mt-5 px-5 px-lg-0">
 
                     {
                         projectsContent.cardData.map((card, index) => (
 
                             <Col
-                                md={{ span: 8, offset: card.hasOwnProperty("mdColOffset") ? card.mdColOffset : "" }}
-                                xl={{ span: 4, offset: card.xlColOffset}}
+                                xs={{span: card.xsSpan, offset: card.xsColOffset}}
+                                sm={{ span: 8, offset: card.smColOffset }}
+                                md={{ span: 6, offset: card.mdColOffset }}
+                                lg={{ span: 5, offset: card.hasOwnProperty("lgColOffset") ? card.lgColOffset : "" }}
+                                xl={{ span: 4, offset: card.xlColOffset }}
                                 key={card.uniqueID}
-                                className={`mb-4 px-md-5 px-lg-0 ${card.hasOwnProperty("className") ? card.className : ""}` }
+                                className={`mb-4  px-5 px-sm-3 px-md-4 px-lg-0 colOfCards ${card.hasOwnProperty("className") ? card.className : ""}`}
                             >
 
                                 <section className="card">
