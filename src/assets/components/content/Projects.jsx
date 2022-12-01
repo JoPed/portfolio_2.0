@@ -135,6 +135,7 @@ const Projects = () => {
                                         ref={ref => (cardDetailsRef.current[index] = ref)}
                                     >
                                         {card.details}
+                                        <a className="card__link" href={card.gitHubLink} target="_blank">Åben på Github</a>
                                     </p>
 
                                     <button

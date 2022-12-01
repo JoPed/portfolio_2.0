@@ -59,9 +59,21 @@ h3 {
 }
 
 .card__description,
-.card__details {
+.card__details,
+.card__link {
     font-size: clamp(12px, calc(1rem + .5vw), 1.8rem);
     white-space: pre-line;
+}
+
+.card__link{
+    color: $col_mainText;
+    text-decoration: none;
+    display: block;
+    margin-top: 15px;
+
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 #aboutHeading,
@@ -104,7 +116,6 @@ h3 {
 /* #region  card */
 .card {
     width: 100%;
-    min-height: 500px;
     background-color: transparent;
     border: 1px solid $col_borderCard;
     border-radius: 4px;

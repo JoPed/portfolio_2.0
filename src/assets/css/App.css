@@ -57,9 +57,20 @@ h3 {
 }
 
 .card__description,
-.card__details {
+.card__details,
+.card__link {
   font-size: clamp(12px, 1rem + 0.5vw, 1.8rem);
   white-space: pre-line;
+}
+
+.card__link {
+  color: #F2F2F0;
+  text-decoration: none;
+  display: block;
+  margin-top: 15px;
+}
+.card__link:hover {
+  text-decoration: underline;
 }
 
 #aboutHeading,
