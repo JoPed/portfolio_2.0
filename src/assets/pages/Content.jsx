@@ -1,8 +1,9 @@
 
 import { useEffect } from 'react';
 
-import About from '../components/content/About';
-import Projects from '../components/content/Projects';
+import About from '../components/content/About/About';
+import Projects from '../components/content/Projects/Projects';
+import Skills from '../components/content/Skills/Skills';
 import Container from 'react-bootstrap/Container';
 
 
@@ -15,6 +16,7 @@ const Content = () => {
             <Container fluid="lg">
                 <About />
                 <Projects />
+                <Skills /> 
             </Container>
 
 

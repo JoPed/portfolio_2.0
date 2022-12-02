@@ -74,7 +74,7 @@ h3 {
 }
 
 #aboutHeading,
-#projectsHeading {
+#projectsHeading, #skillsHeading {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
@@ -104,14 +104,9 @@ h3 {
   margin-top: 10rem;
 }
 
-#projectsHeading {
-  margin: auto;
-}
-
 /* #region  card */
 .card {
   width: 100%;
-  min-height: 500px;
   background-color: transparent;
   border: 1px solid #F28705;
   border-radius: 4px;
@@ -161,10 +156,18 @@ h3 {
   background-color: rgba(242, 242, 240, 0.1);
 }
 
+.card__link svg {
+  vertical-align: bottom;
+}
+
 /* #endregion */
+#skills {
+  margin-top: 10rem;
+}
+
 @media only screen and (max-width: 991px) {
   /* #region  Text */
-  #aboutHeading {
+  #aboutHeading, #projectsHeading, #skillsHeading {
     margin-inline: auto;
   }
   /* #endregion */
@@ -172,6 +175,7 @@ h3 {
 @media only screen and (max-width: 767px) {
   #portrait {
     max-width: 420px;
+    margin-inline: auto;
   }
 }
 @media only screen and (max-width: 485px) {

@@ -3,20 +3,20 @@ export const projectsContent = {
     headline: "Projekter",
     cardData: [
         {
-            pcImg: "https://i.picsum.photos/id/1081/460/200.jpg?hmac=4SdKOlkbW_8J6vIi28Q1gWaW3Ic7g3sh0k_PAsDZEEc",
-            tabletImg: "https://i.picsum.photos/id/1081/460/200.jpg?hmac=4SdKOlkbW_8J6vIi28Q1gWaW3Ic7g3sh0k_PAsDZEEc",
-            mobileImg: "https://i.picsum.photos/id/1081/460/200.jpg?hmac=4SdKOlkbW_8J6vIi28Q1gWaW3Ic7g3sh0k_PAsDZEEc",
+            pcImg: "/assets/images/desktop/projekter/mosaic_pc.webp",
+            tabletImg: "/assets/images/tablet/projekter/mosaic_tablet.webp",
+            mobileImg: "/assets/images/mobile/projekter/mosaic_mobile.webp",
             altText: "Mosaik med CSS GRID",
             title: "Mosaik",
             description: "Et lille 'mosaik billede' jeg lavede, i begyndelsen af webudvikler uddannelsen.",
-            details: "Til projektet brugte jeg HTML og CSS med GRID. Projektet er et fritids projekt jeg lavede for at prøve GRID-LINES.",
+            details: "Til projektet brugte jeg HTML og CSS med GRID. Projektet er et fritids projekt jeg lavede for at prøve grid-template-area.",
             gitHubLink: "https://github.com/JoPed/Mosaic_with_grid",
             xsSpan: 12,
             xsColOffset: 0,
             smColOffset: 2,
             mdColOffset: 0,
             lgColOffset: 1,
-            xlColOffset: 2,
+            xlColOffset: 1,
             className: "me-0 me-lg-4",
             uniqueID: "project1"
 
@@ -35,7 +35,7 @@ export const projectsContent = {
             smColOffset: 2,
             mdColOffset: 0,
             lgColOffset: 0,
-            xlColOffset: 0,
+            xlColOffset: 2,
             uniqueID: "project2"
 
         },
@@ -47,30 +47,34 @@ export const projectsContent = {
             title: "Hangman",
             description: "Et fritids projekt jeg har lavet i ReactJS for at udforske React og prøve det af med et simpelt spil.",
             details: "Til projektet har jeg brugt Vite + ReactJS. Jeg bruger bla. useEffect, useState samt useRef, samt et Canvas.",
+            gitHubLink: "https://github.com/JoPed/hangman_game",
+            siteLink: "https://hangman-game-1yg.pages.dev",
             xsSpan: 12,
             xsColOffset: 0,
             smColOffset: 2,
             mdColOffset: 0,
             lgColOffset: 1,
-            xlColOffset: 2,
+            xlColOffset: 1,
             className: "me-0 me-lg-4",
             uniqueID: "project3"
 
         },
         {
-            pcImg: "https://i.picsum.photos/id/868/460/200.jpg?hmac=bNINCzdSNY-AvqFFcmwFTNmSaJDgUJsZkZJ3l-qbHV0",
-            tabletImg: "https://i.picsum.photos/id/868/460/200.jpg?hmac=bNINCzdSNY-AvqFFcmwFTNmSaJDgUJsZkZJ3l-qbHV0",
-            mobileImg: "https://i.picsum.photos/id/868/460/200.jpg?hmac=bNINCzdSNY-AvqFFcmwFTNmSaJDgUJsZkZJ3l-qbHV0",
+            pcImg: "/assets/images/desktop/projekter/nuo_pc.webp",
+            tabletImg: "/assets/images/tablet/projekter/nuo_tablet.webp",
+            mobileImg: "/assets/images/mobile/projekter/nuo_mobile.webp",
             altText: "Nuo frontpage made in React",
             title: "Advanceret Frontend",
             description: "Afleveringsprojekt i Advanceret Frontend med implementering af udviklet design.",
             details: "Til projektet har jeg brugt ReactJS, React Bootstrap, React router dom, React hook form m.fl.",
+            gitHubLink: "https://github.com/JoPed/nuo",
+            siteLink: "https://nuo.pages.dev",
             xsSpan: 12,
             xsColOffset: 0,
             smColOffset: 2,
             mdColOffset: 0,
             lgColOffset: 0,
-            xlColOffset: 0,
+            xlColOffset: 2,
             uniqueID: "project4"
 
         }
