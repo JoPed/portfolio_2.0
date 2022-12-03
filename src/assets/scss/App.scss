@@ -45,7 +45,7 @@ h1 {
 
 h2 {
     color: $col_headings;
-    font-size: clamp(2.2rem, calc(2rem + .8vw), 4rem);
+    font-size: clamp(2.2rem, calc(1.8rem + .8vw), 4rem);
 }
 
 h3 {
@@ -65,19 +65,20 @@ h3 {
     white-space: pre-line;
 }
 
-.card__link{
+.card__link {
     color: $col_mainText;
     text-decoration: none;
     display: block;
     margin-top: 15px;
 
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }
 
 #aboutHeading,
-#projectsHeading, #skillsHeading {
+#projectsHeading,
+#cvHeading {
     white-space: nowrap;
     overflow: hidden;
     position: relative;
@@ -104,8 +105,9 @@ h3 {
 #portrait img {
     border-radius: 4px;
 }
+
 //*Projects
-#projects{
+#projects {
     margin-top: 10rem;
 }
 
@@ -117,14 +119,11 @@ h3 {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    box-shadow: 1px 3px 5px #A64F03;
     row-gap: 15px;
 
     img {
         border-radius: 4px 4px 0 0;
-    }
-
-    &:hover {
-        box-shadow: 2px 6px 10px #A64F03;
     }
 }
 
@@ -160,25 +159,44 @@ h3 {
 
 }
 
-.card__link{
-    svg{
+.card__link {
+    svg {
         vertical-align: bottom;
+        font-size: 2.5rem;
     }
 }
 
 /* #endregion */
 
 
-//*Skils
-#skills{
+//*CV
+#cv {
     margin-top: 10rem;
+
+    .ruler:not(.rulerRow .ruler) {
+        border: 2px solid $col_headings;
+    }
+
+    img {
+        border-radius: .25rem;
+        border: 8px solid $col_headings;
+    }
+
+
 }
+
+#cvHeading{
+    margin-bottom: 15px;
+}
+
 
 //*Media query
 @media only screen and (max-width: 991px) {
 
     /* #region  Text */
-    #aboutHeading, #projectsHeading, #skillsHeading {
+    #aboutHeading,
+    #projectsHeading,
+    #cvHeading {
         margin-inline: auto;
     }
 
@@ -196,8 +214,16 @@ h3 {
 
 @media only screen and (max-width: 485px) {
 
-    #projects .container-lg .row > .colOfCards.px-4{
-         padding-inline: 1rem!important;
-     }
-     
- }
+    #projects .container-lg .row>.colOfCards.px-4 {
+        padding-inline: 1rem !important;
+    }
+
+}
+
+@media only screen and (min-width: 800px) and (max-width: 991px) {
+    .card {
+        max-width: 335px;
+        margin-inline: auto;
+    }
+
+}

@@ -1,8 +1,11 @@
 import { Link as LinkScroll } from "react-scroll";
-import { Link as LinkRouter } from "react-router-dom";
 
-import { FaBars, FaTimes } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
+
+
 
 import { gsap } from "gsap/all";
 
@@ -106,23 +109,19 @@ const Navbar = () => {
                     </li>
 
                     <li>
-                        <LinkScroll to="skills"
+                        <LinkScroll to="cv"
                             smooth={ true }
                             spy={ true }
                             duration={ 500 }
                             offset={ -150 }
                             onClick={ closeMenu }
                         >
-                            Færdigheder
+                            CV
                         </LinkScroll>
-                    </li>
-
-                    <li>
-                        <LinkRouter to="/cv">CV</LinkRouter>
                     </li>
                 </ul>
                 <div id="hamburger" onClick={ handleClick }>
-                    { isMenuOpen ? <FaTimes size={ 30 } /> : <FaBars size={ 30 } /> }
+                    { isMenuOpen ? <FontAwesomeIcon icon={faXmark}  /> : <FontAwesomeIcon icon={faBars}  /> }
                 </div>
 
             </nav>

@@ -8,8 +8,9 @@ import { useEffect, useState, useRef } from "react";
 import { gsap } from "gsap/all";
 import { ScrollTrigger } from "gsap/all";
 
-import { FaGithub, FaGlobe } from 'react-icons/fa';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 import TypeWriter from "../../TypeWriter";
 import { projectsContent } from "./ProjectsContent";
@@ -134,14 +135,14 @@ const Projects = () => {
                                         ref={ ref => ( cardDetailsRef.current[ index ] = ref ) }
                                     >
                                         { card.details }
-                                        <a className="card__link" href={ card.gitHubLink } target="_blank"> <FaGithub size={ 25 } /> Åben på Github</a>
+                                        <a className="card__link" href={ card.gitHubLink } target="_blank"> <FontAwesomeIcon icon={faGithub}  /> Åben på Github</a>
                                         {
                                             card.hasOwnProperty( "siteLink" ) ?
                                                 ( <a
                                                     className="card__link"
                                                     href={ card.siteLink }
                                                     target="_blank"
-                                                > <FaGlobe size={ 25 } /> Åben siden</a> ) : null }
+                                                > <FontAwesomeIcon icon={faGlobe} /> Åben siden</a> ) : null }
                                     </p>
 
                                     <button

@@ -44,7 +44,7 @@ h1 {
 
 h2 {
   color: #F28705;
-  font-size: clamp(2.2rem, 2rem + 0.8vw, 4rem);
+  font-size: clamp(2.2rem, 1.8rem + 0.8vw, 4rem);
 }
 
 h3 {
@@ -74,7 +74,8 @@ h3 {
 }
 
 #aboutHeading,
-#projectsHeading, #skillsHeading {
+#projectsHeading,
+#cvHeading {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
@@ -117,14 +118,12 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-shadow: 1px 3px 5px #A64F03;
+          box-shadow: 1px 3px 5px #A64F03;
   row-gap: 15px;
 }
 .card img {
   border-radius: 4px 4px 0 0;
-}
-.card:hover {
-  -webkit-box-shadow: 2px 6px 10px #A64F03;
-          box-shadow: 2px 6px 10px #A64F03;
 }
 
 .card__title {
@@ -158,16 +157,30 @@ h3 {
 
 .card__link svg {
   vertical-align: bottom;
+  font-size: 2.5rem;
 }
 
 /* #endregion */
-#skills {
+#cv {
   margin-top: 10rem;
+}
+#cv .ruler:not(.rulerRow .ruler) {
+  border: 2px solid #F28705;
+}
+#cv img {
+  border-radius: 0.25rem;
+  border: 8px solid #F28705;
+}
+
+#cvHeading {
+  margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 991px) {
   /* #region  Text */
-  #aboutHeading, #projectsHeading, #skillsHeading {
+  #aboutHeading,
+#projectsHeading,
+#cvHeading {
     margin-inline: auto;
   }
   /* #endregion */
@@ -181,5 +194,11 @@ h3 {
 @media only screen and (max-width: 485px) {
   #projects .container-lg .row > .colOfCards.px-4 {
     padding-inline: 1rem !important;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 991px) {
+  .card {
+    max-width: 335px;
+    margin-inline: auto;
   }
 }/*# sourceMappingURL=App.css.map */

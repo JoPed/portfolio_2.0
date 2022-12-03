@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 import About from '../components/content/About/About';
 import Projects from '../components/content/Projects/Projects';
-import Skills from '../components/content/Skills/Skills';
+import Cv from '../components/content/Cv/Cv';
 import Container from 'react-bootstrap/Container';
 
 
@@ -16,7 +16,7 @@ const Content = () => {
             <Container fluid="lg">
                 <About />
                 <Projects />
-                <Skills /> 
+                <Cv /> 
             </Container>
 
 
