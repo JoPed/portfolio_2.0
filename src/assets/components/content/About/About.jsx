@@ -2,25 +2,10 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import { useEffect } from "react";
-
-
-import TypeWriter from "../../TypeWriter";
+import Typewriter from "../../Typewriter";
 import { aboutContent } from "./AboutContent";
 
 const About = () => {
-
-    let typeWriter;
-
-    useEffect( () => {
-
-        typeWriter = new TypeWriter( aboutContent.headline, "#aboutHeading" );
-
-        typeWriter.setInitialValues();
-
-    } )
-
-
 
     return (
         <section id="about" className="pb-3">
@@ -28,16 +13,11 @@ const About = () => {
             <Row>
                 <Col xs={ { span: 12, order: 2 } } lg={ { span: 6, order: 1, offset: 1 } }>
 
-
-                    <h2
-                        id="aboutHeading"
-                        className="mt-3">
-
-                        <span className="heading__blinkCursorStart" />
-                        { aboutContent.headline }
-                        <span className="heading__blinkCursorEnd" />
-
-                    </h2>
+                    <Typewriter
+                        headingId="aboutHeading"
+                        headline={aboutContent.headline}
+                        enableScrollTrigger={false}
+                    /> 
 
                     <Row>
                         <Col>
@@ -48,7 +28,7 @@ const About = () => {
                     </Row>
                 </Col>
 
-                <Col xs={ { span: 8, order: 1, offset: 2 } } sm={ { span: 8, offset: 2} } md={ { span: 6, offset: 3 } } lg={ { span: 5, order: 2, offset: 0 } }>
+                <Col xs={ { span: 8, order: 1, offset: 2 } } sm={ { span: 8, offset: 2 } } md={ { span: 6, offset: 3 } } lg={ { span: 5, order: 2, offset: 0 } }>
                     <figure className="mt-3" id="portrait">
 
                         {/* <img
@@ -57,19 +37,19 @@ const About = () => {
                         /> */}
 
                         <picture>
-                            {/* mobile */}
+                            {/* mobile */ }
                             <source media="(max-width: 575px)" srcSet={ aboutContent.portraitImgMobile } />
 
-                             {/*tablet  */}
+                            {/*tablet  */ }
                             <source media="(max-width: 991px)" srcSet={ aboutContent.portraitImgTablet } />
 
-                            {/* large screens */}
+                            {/* large screens */ }
                             <source media="(max-width: 1199px)" srcSet={ aboutContent.portraitImgLg } />
 
-                            {/* extra large screens */}
+                            {/* extra large screens */ }
                             <source media="(min-width: 1200px)" srcSet={ aboutContent.portraitImgXl } />
 
-                            <img src={ aboutContent.portraitImgLg } alt="Portrait of Jonas Bjørn Pedersen"  />
+                            <img src={ aboutContent.portraitImgLg } alt="Portrait of Jonas Bjørn Pedersen" />
 
                         </picture>
 

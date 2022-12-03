@@ -5,5 +5,37 @@ export const aboutContent = {
         portraitImgXl: "/assets/images/desktop/about/Portrait_Jonas_Bjoern_Pedersen_xl.webp",
         portraitImgLg: "/assets/images/desktop/about/Portrait_Jonas_Bjoern_Pedersen_lg.webp",
         portraitImgTablet: "/assets/images/tablet/about/Portrait_Jonas_Bjoern_Pedersen_tablet.webp",
-        portraitImgMobile: "/assets/images/mobile/about/Portrait_Jonas_Bjoern_Pedersen_mobile.webp"
+        portraitImgMobile: "/assets/images/mobile/about/Portrait_Jonas_Bjoern_Pedersen_mobile.webp",
+        slides: [
+                {
+                        urlXl: "",
+                        urlLg: "",
+                        urlTablet: "",
+                        urlTablet: ""
+                },
+                {
+                        urlXl: "",
+                        urlLg: "",
+                        urlTablet: "",
+                        urlTablet: ""
+                },
+                {
+                        urlXl: "",
+                        urlLg: "",
+                        urlTablet: "",
+                        urlTablet: ""
+                },
+                {
+                        urlXl: "",
+                        urlLg: "",
+                        urlTablet: "",
+                        urlTablet: ""
+                },
+                {
+                        urlXl: "",
+                        urlLg: "",
+                        urlTablet: "",
+                        urlTablet: ""
+                }
+        ]
 }

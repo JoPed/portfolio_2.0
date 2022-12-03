@@ -7,16 +7,18 @@ import Navbar from './assets/components/Navbar';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  
+function App () {
+
 
   return (
     <Router >
+
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Content />} />
+        <Route path="/" element={ <Content /> } />
       </Routes>
+
     </Router>
   )
 }

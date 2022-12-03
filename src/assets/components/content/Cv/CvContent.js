@@ -1,10 +1,30 @@
+import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons"
+
 export const cvContent = {
     headline: "Webudvikler under uddannelse",
-    info: {
-        address: "Skolestræde 1, 2.t.v  8500 Grenaa",
-        mobile: "21152526",
-        mail: "jonasbjoern@gmail.com"
+    image: {
+        imgLx: "/assets/images/desktop/cv/Portrait_Jonas_Bjoern_Pedersen_lx.webp",
+        imgLg: "/assets/images/desktop/cv/Portrait_Jonas_Bjoern_Pedersen_lg.webp",
+        imgTablet:"/assets/images/tablet/cv/Portrait_Jonas_Bjoern_Pedersen_tablet.webp"
     },
+    info: [
+            {
+                info: "Skolestræde 1, 2.t.v  8500 Grenaa",
+                icon: faLocationDot,
+                id: "address"
+            },
+            {
+                info: "21152526",
+                icon: faPhone,
+                id: "phonenumber"
+            },
+            {
+                info: "jonasbjoern@gmail.com",
+                icon: faEnvelope,
+                id: "mail"
+            }
+        ]
+    ,
     education: [
         {
             year: "2022 - ",

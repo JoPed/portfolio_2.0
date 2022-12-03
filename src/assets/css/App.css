@@ -63,6 +63,10 @@ h3 {
   white-space: pre-line;
 }
 
+#personalInfoList li {
+  font-size: 1.5rem;
+}
+
 .card__link {
   color: #F2F2F0;
   text-decoration: none;
@@ -81,8 +85,12 @@ h3 {
   position: relative;
 }
 
-.heading__blinkCursorEnd,
-.heading__blinkCursorStart {
+.aboutHeading__blinkCursorEnd,
+.aboutHeading__blinkCursorStart,
+.projectsHeading__blinkCursorEnd,
+.projectsHeading__blinkCursorStart,
+.cvHeading__blinkCursorEnd,
+.cvHeading__blinkCursorStart {
   display: inline-block;
   position: absolute;
   top: 10%;
@@ -97,8 +105,8 @@ h3 {
   border: 1px solid #F28705;
 }
 
-#portrait img {
-  border-radius: 4px;
+#portrait img, .slides {
+  border-radius: 50%;
 }
 
 #projects {
@@ -176,6 +184,32 @@ h3 {
   margin-bottom: 15px;
 }
 
+#personalInfoList {
+  margin-top: 12px;
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 1200px) {
+  #personalInfoList {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #personalInfoList li {
+    padding: 8px;
+  }
+}
 @media only screen and (max-width: 991px) {
   /* #region  Text */
   #aboutHeading,
