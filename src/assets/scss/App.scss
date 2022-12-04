@@ -49,14 +49,17 @@ h2 {
 }
 
 h3 {
+    font-family: $font-title;
+    color: $col_headings;
     font-size: clamp(1.8rem, calc(2rem + .8vw), 2.5rem);
 }
 
-
 .mainText {
-    font-size: clamp(15px, calc(1rem + .6vw), 2rem);
+    font-size: clamp(1.5rem, calc(1rem + .6vw), 2rem);
     white-space: pre-line;
 }
+
+
 
 .card__description,
 .card__details,
@@ -65,8 +68,10 @@ h3 {
     white-space: pre-line;
 }
 
-#personalInfoList li{
+#personalInfoList li {
     font-size: 1.5rem;
+    white-space: pre-line;
+    text-align: center;
 }
 
 .card__link {
@@ -93,10 +98,21 @@ h3 {
 .projectsHeading__blinkCursorEnd,
 .projectsHeading__blinkCursorStart,
 .cvHeading__blinkCursorEnd,
-.cvHeading__blinkCursorStart{
+.cvHeading__blinkCursorStart {
     display: inline-block;
     position: absolute;
     top: 10%;
+}
+
+.cvList > li {
+    font-family: $font-title;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.cvList > li li {
+    font-family: $font-text;
+    font-weight: normal;
 }
 
 /* #endregion */
@@ -110,16 +126,16 @@ h3 {
 }
 
 //* About
-.slideshow{
+.slideshow {
     box-shadow: 1px 3px 5px $brown;
     border-radius: 50%;
 }
 
-.slides{
+.slides {
     display: none;
 }
 
-.slides img{
+.slides img {
     border-radius: 50%;
 }
 
@@ -187,6 +203,7 @@ h3 {
 
 
 //*CV
+/* #region  CV */
 #cv {
     margin-top: 10rem;
 
@@ -202,11 +219,17 @@ h3 {
 
 }
 
-#cvHeading{
+#cvHeading {
     margin-bottom: 15px;
 }
 
-#personalInfoList{
+#headingOtherRemarks{
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+}
+
+#personalInfoList {
     margin-top: 12px;
     list-style-type: none;
     display: flex;
@@ -215,18 +238,78 @@ h3 {
 
 }
 
+/* #region  table styling */
+//* used in education, employmenthistory, language and other remarks 
+.cvTable {
+    font-size: 1.6rem;
+    color: $col_mainText;
+    margin-left: 1rem;
+    width: fit-content;
+}
+
+.cvTable tr td:first-child {
+    text-align: center;
+    padding-right: 25px;
+}
+
+.cvTable tr td {
+    padding: 10px 0;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.cvTable td b {
+    font-family: $font-title;
+}
+
+.cvTable.otherRemarks{
+    margin-inline: auto;
+    display: none;
+}
+
+.cvTable.otherRemarks.active{
+    display: block;
+}
+/* #endregion */
+
+/* #region  List styling */
+//* used in professional and personal skills
+
+.cvList {
+    color: $col_mainText;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    line-height: 1.5;
+
+    // subskils
+    ul {
+        padding-left: 2rem;
+    }
+}
+
+.cvList__personal {
+    line-height: 2.25;
+}
+
+/* #endregion */
+
+
+/* #endregion */
+
 
 //*Media query
 @media only screen and (max-width: 1200px) {
 
-    #personalInfoList{
+    #personalInfoList {
         flex-direction: column;
 
         li {
             padding: 8px;
         }
     }
-    
+
 }
 
 @media only screen and (max-width: 991px) {

@@ -123,11 +123,11 @@ const Projects = () => {
                 </Row>
             </Container>
 
-            <Row className="rulerRow">
+            {/* <Row className="rulerRow">
                 <Col xs={12} md={{ span: 10, offset: 1 }}>
                     <hr className="ruler" />
                 </Col>
-            </Row>
+            </Row> */}
 
         </section>
 

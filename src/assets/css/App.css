@@ -48,11 +48,13 @@ h2 {
 }
 
 h3 {
+  font-family: "BAHNSCHRIFT";
+  color: #F28705;
   font-size: clamp(1.8rem, 2rem + 0.8vw, 2.5rem);
 }
 
 .mainText {
-  font-size: clamp(15px, 1rem + 0.6vw, 2rem);
+  font-size: clamp(1.5rem, 1rem + 0.6vw, 2rem);
   white-space: pre-line;
 }
 
@@ -65,6 +67,8 @@ h3 {
 
 #personalInfoList li {
   font-size: 1.5rem;
+  white-space: pre-line;
+  text-align: center;
 }
 
 .card__link {
@@ -94,6 +98,17 @@ h3 {
   display: inline-block;
   position: absolute;
   top: 10%;
+}
+
+.cvList > li {
+  font-family: "BAHNSCHRIFT";
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.cvList > li li {
+  font-family: "SourceCodePro";
+  font-weight: normal;
 }
 
 /* #endregion */
@@ -179,6 +194,7 @@ h3 {
 }
 
 /* #endregion */
+/* #region  CV */
 #cv {
   margin-top: 10rem;
 }
@@ -192,6 +208,15 @@ h3 {
 
 #cvHeading {
   margin-bottom: 15px;
+}
+
+#headingOtherRemarks {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
 }
 
 #personalInfoList {
@@ -209,6 +234,67 @@ h3 {
           justify-content: space-between;
 }
 
+/* #region  table styling */
+.cvTable {
+  font-size: 1.6rem;
+  color: #F2F2F0;
+  margin-left: 1rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.cvTable tr td:first-child {
+  text-align: center;
+  padding-right: 25px;
+}
+
+.cvTable tr td {
+  padding: 10px 0;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.cvTable td b {
+  font-family: "BAHNSCHRIFT";
+}
+
+.cvTable.otherRemarks {
+  margin-inline: auto;
+  display: none;
+}
+
+.cvTable.otherRemarks.active {
+  display: block;
+}
+
+/* #endregion */
+/* #region  List styling */
+.cvList {
+  color: #F2F2F0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+.cvList ul {
+  padding-left: 2rem;
+}
+
+.cvList__personal {
+  line-height: 2.25;
+}
+
+/* #endregion */
+/* #endregion */
 @media only screen and (max-width: 1200px) {
   #personalInfoList {
     -webkit-box-orient: vertical;
