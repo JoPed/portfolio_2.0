@@ -105,7 +105,17 @@ h3 {
   border: 1px solid #F28705;
 }
 
-#portrait img, .slides {
+.slideshow {
+  -webkit-box-shadow: 1px 3px 5px #A67153;
+          box-shadow: 1px 3px 5px #A67153;
+  border-radius: 50%;
+}
+
+.slides {
+  display: none;
+}
+
+.slides img {
   border-radius: 50%;
 }
 
@@ -126,8 +136,8 @@ h3 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-shadow: 1px 3px 5px #A64F03;
-          box-shadow: 1px 3px 5px #A64F03;
+  -webkit-box-shadow: 1px 3px 5px #A67153;
+          box-shadow: 1px 3px 5px #A67153;
   row-gap: 15px;
 }
 .card img {
@@ -220,7 +230,7 @@ h3 {
   /* #endregion */
 }
 @media only screen and (max-width: 767px) {
-  #portrait {
+  .slides {
     max-width: 420px;
     margin-inline: auto;
   }

@@ -5,6 +5,8 @@ import Col from "react-bootstrap/Col";
 import Typewriter from "../../Typewriter";
 import { aboutContent } from "./AboutContent";
 
+import Carousel from "../../Carousel";
+
 const About = () => {
 
     return (
@@ -15,9 +17,9 @@ const About = () => {
 
                     <Typewriter
                         headingId="aboutHeading"
-                        headline={aboutContent.headline}
-                        enableScrollTrigger={false}
-                    /> 
+                        headline={ aboutContent.headline }
+                        enableScrollTrigger={ false }
+                    />
 
                     <Row>
                         <Col>
@@ -29,31 +31,12 @@ const About = () => {
                 </Col>
 
                 <Col xs={ { span: 8, order: 1, offset: 2 } } sm={ { span: 8, offset: 2 } } md={ { span: 6, offset: 3 } } lg={ { span: 5, order: 2, offset: 0 } }>
-                    <figure className="mt-3" id="portrait">
 
-                        {/* <img
-                            src="/assets/images/desktop/Portrait_Jonas_Pedersen.jpg"
-                            alt="Portrait of Jonas Bjørn Pedersen"
-                        /> */}
+                    <Carousel
+                        slides={ aboutContent.slides }
+                        trigger="#about"
+                    />
 
-                        <picture>
-                            {/* mobile */ }
-                            <source media="(max-width: 575px)" srcSet={ aboutContent.portraitImgMobile } />
-
-                            {/*tablet  */ }
-                            <source media="(max-width: 991px)" srcSet={ aboutContent.portraitImgTablet } />
-
-                            {/* large screens */ }
-                            <source media="(max-width: 1199px)" srcSet={ aboutContent.portraitImgLg } />
-
-                            {/* extra large screens */ }
-                            <source media="(min-width: 1200px)" srcSet={ aboutContent.portraitImgXl } />
-
-                            <img src={ aboutContent.portraitImgLg } alt="Portrait of Jonas Bjørn Pedersen" />
-
-                        </picture>
-
-                    </figure>
                 </Col>
 
             </Row>

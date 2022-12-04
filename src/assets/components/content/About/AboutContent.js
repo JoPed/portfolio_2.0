@@ -8,34 +8,39 @@ export const aboutContent = {
         portraitImgMobile: "/assets/images/mobile/about/Portrait_Jonas_Bjoern_Pedersen_mobile.webp",
         slides: [
                 {
-                        urlXl: "",
-                        urlLg: "",
-                        urlTablet: "",
-                        urlTablet: ""
+                        sliderImgXl: "/assets/images/desktop/about/xl/slide01_tiger_thailand_xl.webp",
+                        sliderImgLg: "/assets/images/desktop/about/lg/slide01_tiger_thailand_lg.webp",
+                        sliderImgTablet: "/assets/images/tablet/about/slide01_tiger_thailand_tablet.webp",
+                        sliderImgMobile: "/assets/images/mobile/about/slide01_tiger_thailand_mobile.webp",
+                        altText: "Jonas og en stor stor tiger ved et kloster i Thailand"
                 },
                 {
-                        urlXl: "",
-                        urlLg: "",
-                        urlTablet: "",
-                        urlTablet: ""
+                        sliderImgXl: "/assets/images/desktop/about/xl/slide02_thailand_strand_kokosnødder_xl.webp",
+                        sliderImgLg: "/assets/images/desktop/about/lg/slide02_thailand_strand_kokosnødder_lg.webp",
+                        sliderImgTablet: "/assets/images/tablet/about/slide02_thailand_strand_kokosnødder_tablet.webp",
+                        sliderImgMobile: "/assets/images/mobile/about/slide02_thailand_strand_kokosnødder_mobile.webp",
+                        altText: "Jonas og en hel stak kokosnødder"
                 },
                 {
-                        urlXl: "",
-                        urlLg: "",
-                        urlTablet: "",
-                        urlTablet: ""
+                        sliderImgXl: "/assets/images/desktop/about/xl/slide03_seng_vmbold_portugal_xl.webp",
+                        sliderImgLg: "/assets/images/desktop/about/lg/slide03_seng_vmbold_portugal_lg.webp",
+                        sliderImgTablet: "/assets/images/tablet/about/slide03_seng_vmbold_portugal_tablet.webp",
+                        sliderImgMobile: "/assets/images/mobile/about/slide03_seng_vmbold_portugal_mobile.webp",
+                        altText: "Ung træt Jonas sover med sin nye VM fodbold i Portugal"
                 },
                 {
-                        urlXl: "",
-                        urlLg: "",
-                        urlTablet: "",
-                        urlTablet: ""
+                        sliderImgXl: "/assets/images/desktop/about/xl/slide04_kajak_thailand_xl.webp",
+                        sliderImgLg: "/assets/images/desktop/about/lg/slide04_kajak_thailand_lg.webp",
+                        sliderImgTablet: "/assets/images/tablet/about/slide04_kajak_thailand_tablet.webp",
+                        sliderImgMobile: "/assets/images/mobile/about/slide04_kajak_thailand_mobile.webp",
+                        altText: "Kajak tur ved klippeøer i Thailand"
                 },
                 {
-                        urlXl: "",
-                        urlLg: "",
-                        urlTablet: "",
-                        urlTablet: ""
+                        sliderImgXl: "/assets/images/desktop/about/xl/slide05_strand_vmbold_portugal_xl.webp",
+                        sliderImgLg: "/assets/images/desktop/about/lg/slide05_strand_vmbold_portugal_lg.webp",
+                        sliderImgTablet: "/assets/images/tablet/about/slide05_strand_vmbold_portugal_tablet.webp",
+                        urlMobile: "/assets/images/mobile/about/slide05_strand_vmbold_portugal_mobile.webp",
+                        altText: "Ung Jonas spiller bold på strand i Portugal"
                 }
         ]
 }

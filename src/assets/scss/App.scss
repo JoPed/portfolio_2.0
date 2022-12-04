@@ -110,7 +110,16 @@ h3 {
 }
 
 //* About
-#portrait img, .slides {
+.slideshow{
+    box-shadow: 1px 3px 5px $brown;
+    border-radius: 50%;
+}
+
+.slides{
+    display: none;
+}
+
+.slides img{
     border-radius: 50%;
 }
 
@@ -127,7 +136,7 @@ h3 {
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 3px 5px #A64F03;
+    box-shadow: $col_primary_boxShadow;
     row-gap: 15px;
 
     img {
@@ -234,7 +243,7 @@ h3 {
 
 @media only screen and (max-width: 767px) {
 
-    #portrait {
+    .slides {
         max-width: 420px;
         margin-inline: auto;
     }
