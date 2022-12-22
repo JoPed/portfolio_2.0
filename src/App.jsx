@@ -4,6 +4,7 @@ import "./assets/css/Navigation.min.css";
 
 import Content from './assets/pages/Content';
 import Navbar from './assets/components/Navbar';
+import Footer from './assets/components/Footer';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -17,7 +18,10 @@ function App () {
 
       <Routes>
         <Route path="/" element={ <Content /> } />
+        {/* Indsæt kontakt formular */}
       </Routes>
+
+      <Footer />
 
     </Router>
   )

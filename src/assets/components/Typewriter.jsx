@@ -13,7 +13,7 @@ const Typewriter = ( { headingId, headline, enableScrollTrigger } ) => {
     const headingSelector = `.${ headingId }`;
 
 
-    const setInitialValues = ( calledFrom ) => {
+    const setInitialValues = ( ) => {
 
         gsap.set( headingSelector + "__blinkCursorEnd", {
             backgroundColor: "transparent",

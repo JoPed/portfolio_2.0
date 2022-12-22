@@ -1,0 +1,84 @@
+@import 'variables';
+
+.footer{
+    width: 100%;
+    background-color: transparent;
+    color: $col_mainText;
+    margin-top: auto;
+    padding-inline: .75rem;
+    padding-block: 1.25rem;
+
+    p{
+        font-size: 1.6rem;
+        text-align: center;
+
+        span:first-child{
+            font-weight: bold;
+        }
+
+        span:last-child{
+            font-style: italic;
+        }
+    }
+}
+
+.contactInfo{    
+    width: fit-content;
+    margin-left: auto;
+}
+
+.contactInfo ul {
+    list-style-type: none;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.6rem;
+
+    svg {
+        font-size: 2rem;
+        vertical-align: middle;
+    }
+}
+
+.contactInfo h2{
+    text-align: center;
+}
+
+.contactInfo a, .socials a{
+    color: $col_mainText;
+        text-decoration: none;
+        display: block;
+        width: fit-content;
+        margin-inline: auto;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin-right: auto;
+}
+
+.socials a{
+    display: inline-block;
+    margin-right: .8rem;
+
+    svg {
+        font-size: 4rem;
+        vertical-align: middle;
+    }
+
+    svg.globe{
+        font-size: 3.5rem;
+    }
+}
+
+.socials:last-child{
+    margin-right: 0;
+}
+
