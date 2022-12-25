@@ -5,10 +5,6 @@ import { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
 
-
-
-import { gsap } from "gsap/all";
-
 const Navbar = () => {
 
     /* #region  Usestates */
@@ -18,8 +14,6 @@ const Navbar = () => {
     /* #endregion */
 
     const headerRef = useRef();
-
-    const timeLine = gsap.timeline();
 
     /* #region  Menu handling */
     const handleClick = () => setIsMenuOpen( !isMenuOpen );
@@ -117,6 +111,17 @@ const Navbar = () => {
                             onClick={ closeMenu }
                         >
                             CV
+                        </LinkScroll>
+                    </li>
+                    <li>
+                        <LinkScroll to="contact"
+                            smooth={ true }
+                            spy={ true }
+                            duration={ 500 }
+                            offset={ -150 }
+                            onClick={ closeMenu }
+                        >
+                            Kontakt
                         </LinkScroll>
                     </li>
                 </ul>

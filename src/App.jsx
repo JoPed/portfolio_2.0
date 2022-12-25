@@ -18,7 +18,6 @@ function App () {
 
       <Routes>
         <Route path="/" element={ <Content /> } />
-        {/* Indsæt kontakt formular */}
       </Routes>
 
       <Footer />

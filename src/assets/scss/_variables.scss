@@ -19,10 +19,14 @@ $col_mainText: $white;
 $col_headings: $orange;
 
 $col_primary_boxShadow: 1px 3px 5px $brown;
+$col_secondary_boxShadow: 0px 0px 0px .375rem rgba($orange, .83);
 
 $col_borderCard: $orange;
 $col_borderCardBtn: rgba($white, .25);
 $col_borderCardBtnHover: rgba($white, .1);
+
+$col_input_Border: 2px solid $brown;
+$col_input_Background: $fullGrey;
 
 
 //*Fonts
