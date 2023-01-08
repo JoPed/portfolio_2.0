@@ -5,6 +5,7 @@ $brown: #A67153;
 $redBrownish: #A64F03;
 $grey: rgba(57,62,70,.83);
 $fullGrey: rgb(57,62,70);
+$lightGrey: #ccc;
 
 
 $col_header: linear-gradient(90deg, $brown 0%, $orange 50%, $redBrownish 100%);
@@ -27,6 +28,8 @@ $col_borderCardBtnHover: rgba($white, .1);
 
 $col_input_Border: 2px solid $brown;
 $col_input_Background: $fullGrey;
+
+$col_submissionInfo_background: $orange;
 
 
 //*Fonts

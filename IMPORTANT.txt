@@ -1,0 +1,2 @@
+HUSK: 
+Opdater recaptcha til det domain hjemmesiden kører på.

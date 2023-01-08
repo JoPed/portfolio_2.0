@@ -15,8 +15,6 @@ const Carousel = ( { slides, trigger } ) => {
 
     const showSlides = () => {
 
-        console.log("test");
-
         slideRef.current.forEach( s => s.style.display = "none" );
 
         slideIndex.current++;
@@ -44,7 +42,6 @@ const Carousel = ( { slides, trigger } ) => {
             end: "+=60%",
             onEnterBack: () => showSlides(),
             onLeave: () =>{
-                console.log("on leave")
                 resetTimeOut()}
         } )
     }
