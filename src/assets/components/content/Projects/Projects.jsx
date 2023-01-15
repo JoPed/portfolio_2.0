@@ -11,10 +11,11 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 import Typewriter from "../../Typewriter";
 import { projectsContent } from "./ProjectsContent";
+import { useEffect } from "react";
 
-const Projects = ( ) => {
+const Projects = () => {
 
-    const cardDetailsRef = useRef( [] );
+    const cardDetailsRef = useRef( [] );    
 
     const showCardDetails = ( event, index ) => {
 
@@ -35,15 +36,19 @@ const Projects = ( ) => {
             details.style.setProperty( "display", "block" );
             button.textContent = "Read Less";
 
-            // ændre til gsap 
-            // event.target.parentNode.scrollIntoView( { block: "center", inline: "nearest" } );
+            
+            let parent = document.querySelector("#mainContent");
+            parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
+
+
         }
         else {
+
             details.style.setProperty( "display", "none" );
             button.textContent = "Read More";
 
-            // ændre til gsap
-            // event.target.parentNode.scrollIntoView({ block: "end", inline: "nearest"});
+            let parent = document.querySelector("#mainContent");
+            parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
 
         }
 
@@ -51,7 +56,7 @@ const Projects = ( ) => {
 
     return (
 
-        <section id="projects" className="page">
+        <section id="projects" className="page" >
 
             <Container fluid="lg">
 
@@ -84,7 +89,7 @@ const Projects = ( ) => {
                                 className={ `mb-4  px-5 px-sm-3 px-md-4 px-lg-0 colOfCards ${ card.hasOwnProperty( "className" ) ? card.className : "" }` }
                             >
 
-                                <section className="card">
+                                <section className="card" id={card.uniqueID}>
 
                                     <picture>
                                         <source media="(max-width: 575px)" srcSet={ card.mobileImg } />

@@ -8,9 +8,9 @@ const Typewriter = ( { headingId, headline, enableScrollTrigger } ) => {
 
     const [ isReadyToAnimate, setIsReadyToAnimate ] = useState( false );
 
-    gsap.registerPlugin( ScrollTrigger );
+    const [headingSelector] = useState(`.${ headingId }`);
 
-    const headingSelector = `.${ headingId }`;
+    gsap.registerPlugin( ScrollTrigger );
 
 
     const setInitialValues = ( ) => {

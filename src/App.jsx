@@ -4,31 +4,15 @@ import "./assets/css/Navigation.min.css";
 
 import Content from './assets/pages/Content';
 import Navbar from './assets/components/Navigation/Navbar';
-
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProgressBar from "./assets/components/ProgressBar";
 
 function App () {
 
 
   return (
-    // <Router >
-
-    //   <Navbar />
-
-    //   <div className="mainContainer" id="mainContainer">
-
-
-    //   </div>
-
-    //   <Routes>
-    //     <Route path="/" element={ <Content /> } />
-    //   </Routes>
-
-    //   <Footer />
-
-    // </Router>
     <>
       <Navbar />
+      <ProgressBar />
       <Content />
     </>
 

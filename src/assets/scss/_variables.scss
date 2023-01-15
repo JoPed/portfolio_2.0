@@ -4,17 +4,20 @@ $orange: #F28705;
 $brown: #a67153;
 $redBrownish: #A64F03;
 $grey: rgba(57,62,70,.83);
-$fullGrey: rgb(57,62,70);
+$fullGrey: #393e46;
+$sandy: #464139;
 $lightGrey: #ccc;
+$green: #3e4639;
 
 
-$col_header: linear-gradient(90deg, $brown 0%, $orange 50%, $redBrownish 100%);
+// $col_header: linear-gradient(90deg, $brown 0%, $orange 50%, $redBrownish 100%);
 $col_navbar_title: $white;
 $col_navbar_items: $white;
 $col_navbar_items-highlighted: $white;
 $col_navbar_overlay: $grey;
 
 $col_content: $fullGrey;
+$col_content2: $sandy;
 
 $col_mainText: $white;
 $col_headings: $orange;

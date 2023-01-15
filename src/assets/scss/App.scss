@@ -22,11 +22,11 @@ html {
     display: none;
 }
 
-@supports(scrollbar-width: none){
-    *{
-        scrollbar-width: none;
-    }
-}
+// @supports(scrollbar-width: none) {
+//     * {
+//         scrollbar-width: none;
+//     }
+// }
 
 
 //*Main elements
@@ -38,7 +38,6 @@ img {
 }
 
 #mainContent {
-    background-color: $col_content;
     position: relative;
     height: calc(100vh - 150px);
     overflow-y: scroll;
@@ -55,7 +54,7 @@ img {
     }
 }
 
-.footer{
+.footer {
     scroll-snap-align: start;
 
     &.clicked {
@@ -164,25 +163,20 @@ h3 {
 }
 
 //Placing the ruler at the bottom of the page, regardless of the height of the section
-.contactContainer,
-#about {
+#contact {
     display: flex;
     flex-direction: column;
 
     .rulerRow {
-        margin-top: auto;
+        margin-top: 4rem;
     }
 }
 
-#about .rulerRow{
-    margin-top: 10rem;
-}
-
-.contactContainer .rulerRow{
-    margin-top: 2rem;
-}
-
 //* About
+#about {
+    background-color: $col_content;
+}
+
 .slideshow {
     box-shadow: 1px 3px 5px $brown;
     border-radius: 50%;
@@ -199,18 +193,23 @@ h3 {
 //*Projects
 #projects {
     padding-bottom: 10rem;
+    background-color: $col_content2;
 }
 
 /* #region  card */
 .card {
     width: 100%;
-    background-color: transparent;
+    background-color: $col_content;
     border: 1px solid $col_borderCard;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
-    box-shadow: $col_primary_boxShadow;
     row-gap: 15px;
+
+    &:hover {
+        box-shadow: $col_primary_boxShadow;
+
+    }
 
     img {
         border-radius: 4px 4px 0 0;
@@ -263,6 +262,7 @@ h3 {
 /* #region  CV */
 #cv {
     padding-bottom: 13rem;
+    background-color: $col_content;
 
     .ruler:not(.rulerRow .ruler) {
         border: 2px solid $col_headings;
@@ -358,6 +358,9 @@ h3 {
 
 
 //*Kontakt formular
+#contact {
+    background-color: $col_content2;
+}
 
 .contactForm {
     max-width: 800px;
@@ -412,7 +415,7 @@ input[type='text'] {
 
 .input-txtArea {
     border: $col_input_Border;
-    background-color: $col_input_Background;
+    background-color: transparent;
     color: $col_mainText;
     font-size: 2.4rem;
     margin: 0 auto;
@@ -443,7 +446,7 @@ input[type='text'] {
     height: 30px;
     border: none;
     border: $col_input_Border;
-    background-color: $col_input_Background;
+    background-color: transparent;
     cursor: pointer;
     color: $col_mainText;
     border-radius: 5px;

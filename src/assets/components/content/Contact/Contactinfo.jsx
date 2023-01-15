@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from 'react-bootstrap/Container';
@@ -11,7 +11,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Schema } from '../../Schema';
 
 import axios from "axios";
-import { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Contactinfo = () => {
@@ -79,47 +78,30 @@ const Contactinfo = () => {
 
   return (
 
-    <section className="contactContainer page" id="contact">
+    <section className="page" id="contact">
 
-      <Row className="px-5 px-lg-0">
+      <Container fluid="lg">
 
-        <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1, offset: 1 } } className="px-4">
+        <Row className="px-5 px-lg-0">
 
-
-          <form className="contactForm" onSubmit={ handleSubmit( onSubmit ) }>
-            <h2 className="contactHeading">Kontakt</h2>
-
-            {/* //* Change this to use same concept as the notification in my hangman game */ }
-            {/* { message && <div className="submissonInfo">
-              <span>Information</span> <br />
-              { message }
-            </div> } */}
-
-            <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
-              stardard mail application.</p>
-
-            <Row>
-
-              {/* <Col xs={ 12 } md={ 6 }>
-
-                  <label htmlFor="name" className="label">Navn</label>
-
-                  <input
-                    type="text"
-                    id="name"
-                    className="input-name"
-                    placeholder="Skriv dit navn..."
-                    { ...register( 'name' ) } />
-
-                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center"> */}
-
-                    {/**If there is an error with the name field, show the error message */ }
-                    {/* { errors.name?.message }
-                  </FormText>
-              </Col> */}
+          <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1, offset: 1 } } className="px-4">
 
 
-              <Col xs={ 12 }>
+            <form className="contactForm" onSubmit={ handleSubmit( onSubmit ) }>
+              <h2 className="contactHeading">Kontakt</h2>
+
+              {/* //* Change this to use same concept as the notification in my hangman game */ }
+              {/* { message && <div className="submissonInfo">
+                <span>Information</span> <br />
+                  { message }
+                </div> } */}
+
+              <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
+                stardard mail application.</p>
+
+              <Row>
+
+                <Col xs={ 12 }>
 
                   <label htmlFor="email" className="label">Email</label>
 
@@ -133,9 +115,9 @@ const Contactinfo = () => {
                   <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
                     { errors.email?.message }
                   </FormText>
-              </Col>
+                </Col>
 
-              <Col xs={12}>
+                <Col xs={ 12 }>
                   <label htmlFor="subject" className="label">Emne</label>
                   <input
                     type="text"
@@ -147,53 +129,57 @@ const Contactinfo = () => {
                   <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
                     { errors.subject?.message }
                   </FormText>
-              </Col>
+                </Col>
 
-            </Row>      
+              </Row>
 
-            <Row>
-              <Col>
-                <label htmlFor="txtArea" className="label">Besked</label>
+              <Row>
+                <Col>
+                  <label htmlFor="txtArea" className="label">Besked</label>
 
-                <textarea
-                  id="txtArea"
-                  className="input-txtArea"
-                  cols="30"
-                  rows="10"
-                  placeholder="Skriv din besked her..."
-                  { ...register( 'textArea' ) }
+                  <textarea
+                    id="txtArea"
+                    className="input-txtArea"
+                    cols="30"
+                    rows="10"
+                    placeholder="Skriv din besked her..."
+                    { ...register( 'textArea' ) }
+                  />
+
+                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                    { errors.textArea?.message }
+                  </FormText>
+                </Col>
+
+              </Row>
+
+              <Row>
+                <ReCAPTCHA
+                  ref={ recaptchaRef }
+                  sitekey={ _RECAPTCHAKEY }
+                  onChange={ updateRecaptchToken }
+                  className="d-flex justify-content-center"
                 />
+              </Row>
 
-                <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
-                  { errors.textArea?.message }
-                </FormText>
-              </Col>
 
-            </Row>
 
-            <Row>
-               <ReCAPTCHA
-              ref={ recaptchaRef }
-              sitekey={ _RECAPTCHAKEY }
-              onChange={ updateRecaptchToken }
-              className="d-flex justify-content-center"
-            />
-            </Row>
+              <button type="submit" className="submit" disabled={ submitting }> { submitting ? 'Sender besked...' : 'Send besked' }</button>
 
-           
+            </form>
+          </Col>
 
-            <button type="submit" className="submit" disabled={ submitting }> { submitting ? 'Sender besked...' : 'Send besked' }</button>
+        </Row>
 
-          </form>
-        </Col>
+        <Row className="rulerRow ">
+          <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
+            <hr className="ruler" />
+          </Col>
+        </Row>
 
-      </Row>
+      </Container>
 
-      <Row className="rulerRow ">
-        <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
-          <hr className="ruler" />
-        </Col>
-      </Row>
+
 
     </section>
 
