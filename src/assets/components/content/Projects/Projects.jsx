@@ -12,31 +12,38 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import Typewriter from "../../Typewriter";
 import { projectsContent } from "./ProjectsContent";
 
-const Projects = () => {
+const Projects = ( ) => {
 
-    const cardDetailsRef = useRef([]);
+    const cardDetailsRef = useRef( [] );
 
-    const showCardDetails = (event, index) => {
+    const showCardDetails = ( event, index ) => {
+
+        event.preventDefault();
 
         const button = event.currentTarget;
 
         // Getting the details sections of the card that should show/hide
-        const details = cardDetailsRef.current[index];
+        const details = cardDetailsRef.current[ index ];
 
         // Get the computedstyle (those from the stylesheet)
-        const detailStyles = getComputedStyle(details);
+        const detailStyles = getComputedStyle( details );
 
 
-        if (detailStyles.display === "none") {
+        if ( detailStyles.display === "none" ) {
 
             // Setting the styles in the stylesheet, not inline
-            details.style.setProperty("display", "block");
+            details.style.setProperty( "display", "block" );
             button.textContent = "Read Less";
 
+            // ændre til gsap 
+            // event.target.parentNode.scrollIntoView( { block: "center", inline: "nearest" } );
         }
         else {
-            details.style.setProperty("display", "none");
+            details.style.setProperty( "display", "none" );
             button.textContent = "Read More";
+
+            // ændre til gsap
+            // event.target.parentNode.scrollIntoView({ block: "end", inline: "nearest"});
 
         }
 
@@ -44,19 +51,19 @@ const Projects = () => {
 
     return (
 
-        <section id="projects" className="pb-3">
+        <section id="projects" className="page">
 
             <Container fluid="lg">
 
                 <Row className="px-5 px-lg-0">
 
-                    <Col xs={{ span: 12, order: 2 }} lg={{ span: 10, order: 1, offset: 1 }} className="px-4">
+                    <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1, offset: 1 } } className="px-4 mt-5">
 
                         <Typewriter
                             headingId="projectsHeading"
-                            headline={projectsContent.headline}
-                            enableScrollTrigger={true}
-                         /> 
+                            headline={ projectsContent.headline }
+                            enableScrollTrigger={ true }
+                        />
 
                     </Col>
 
@@ -65,51 +72,51 @@ const Projects = () => {
                 <Row className="mt-5 px-5 px-lg-0">
 
                     {
-                        projectsContent.cardData.map((card, index) => (
+                        projectsContent.cardData.map( ( card, index ) => (
 
                             <Col
-                                xs={{ span: card.xsSpan, offset: card.xsColOffset }}
-                                sm={{ span: 8, offset: card.smColOffset }}
-                                md={{ span: 6, offset: card.mdColOffset }}
-                                lg={{ span: 5, offset: card.hasOwnProperty("lgColOffset") ? card.lgColOffset : "" }}
-                                xl={{ span: 4, offset: card.xlColOffset }}
-                                key={card.uniqueID}
-                                className={`mb-4  px-5 px-sm-3 px-md-4 px-lg-0 colOfCards ${card.hasOwnProperty("className") ? card.className : ""}`}
+                                xs={ { span: card.xsSpan, offset: card.xsColOffset } }
+                                sm={ { span: 8, offset: card.smColOffset } }
+                                md={ { span: 6, offset: card.mdColOffset } }
+                                lg={ { span: 5, offset: card.hasOwnProperty( "lgColOffset" ) ? card.lgColOffset : "" } }
+                                xl={ { span: 4, offset: card.xlColOffset } }
+                                key={ card.uniqueID }
+                                className={ `mb-4  px-5 px-sm-3 px-md-4 px-lg-0 colOfCards ${ card.hasOwnProperty( "className" ) ? card.className : "" }` }
                             >
 
                                 <section className="card">
 
                                     <picture>
-                                        <source media="(max-width: 575px)" srcSet={card.mobileImg} />
-                                        <source media="(max-width: 991px)" srcSet={card.tabletImg} />
-                                        <source media="(min-width: 992px)" srcSet={card.pcImg} />
+                                        <source media="(max-width: 575px)" srcSet={ card.mobileImg } />
+                                        <source media="(max-width: 991px)" srcSet={ card.tabletImg } />
+                                        <source media="(min-width: 992px)" srcSet={ card.pcImg } />
 
-                                        <img src={card.pcImg} alt={card.altText} />
+                                        <img src={ card.pcImg } alt={ card.altText } />
 
                                     </picture>
 
-                                    <h3 className="card__title">{card.title}</h3>
+                                    <h3 className="card__title">{ card.title }</h3>
 
-                                    <p className="card__description">{card.description}</p>
+                                    <p className="card__description">{ card.description }</p>
 
                                     <p
                                         className="card__details"
-                                        ref={ref => (cardDetailsRef.current[index] = ref)}
+                                        ref={ ref => ( cardDetailsRef.current[ index ] = ref ) }
                                     >
-                                        {card.details}
-                                        <a className="card__link" href={card.gitHubLink} target="_blank"> <FontAwesomeIcon icon={faGithub} /> Åben på Github</a>
+                                        { card.details }
+                                        <a className="card__link" href={ card.gitHubLink } target="_blank"> <FontAwesomeIcon icon={ faGithub } /> Åben på Github</a>
                                         {
-                                            card.hasOwnProperty("siteLink") ?
-                                                (<a
+                                            card.hasOwnProperty( "siteLink" ) ?
+                                                ( <a
                                                     className="card__link"
-                                                    href={card.siteLink}
+                                                    href={ card.siteLink }
                                                     target="_blank"
-                                                > <FontAwesomeIcon icon={faGlobe} /> Åben siden</a>) : null}
+                                                > <FontAwesomeIcon icon={ faGlobe } /> Åben siden</a> ) : null }
                                     </p>
 
                                     <button
                                         className="card__btn"
-                                        onClick={(event) => showCardDetails(event, index)}
+                                        onClick={ ( event ) => showCardDetails( event, index ) }
                                     >
                                         Read More
                                     </button>
@@ -117,17 +124,11 @@ const Projects = () => {
                                 </section>
                             </Col>
 
-                        ))
+                        ) )
                     }
 
                 </Row>
             </Container>
-
-            {/* <Row className="rulerRow">
-                <Col xs={12} md={{ span: 10, offset: 1 }}>
-                    <hr className="ruler" />
-                </Col>
-            </Row> */}
 
         </section>
 

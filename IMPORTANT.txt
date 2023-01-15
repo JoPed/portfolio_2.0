@@ -1,2 +1,20 @@
 HUSK: 
 Opdater recaptcha til det domain hjemmesiden kører på.
+
+SAVE keeping: 
+
+{/* <Row>
+              <Col xs={12} md={{span:6, offset: 3}}>
+                  <label htmlFor="subject" className="label">Emne</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    className="input-subject"
+                    placeholder="Emnefelt"
+                    { ...register( 'subject' ) } />
+
+                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                    { errors.subject?.message }
+                  </FormText>
+              </Col>
+</Row> */}

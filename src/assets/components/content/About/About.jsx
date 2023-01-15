@@ -9,10 +9,10 @@ import Carousel from "../../Carousel";
 const About = () => {
 
     return (
-        <section id="about" className="pb-3">
+        <section id="about" className="page">
 
-            <Row>
-                <Col xs={ { span: 12, order: 2 } } lg={ { span: 6, order: 1, offset: 1 } }>
+            <Row >
+                <Col xs={ { span: 12, order: 2 } } lg={ { span: 6, order: 1, offset: 1 } } className="mt-5">
 
                     <Typewriter
                         headingId="aboutHeading"
@@ -29,7 +29,13 @@ const About = () => {
                     </Row>
                 </Col>
 
-                <Col xs={ { span: 8, order: 1, offset: 2 } } sm={ { span: 8, offset: 2 } } md={ { span: 6, offset: 3 } } lg={ { span: 5, order: 2, offset: 0 } }>
+                <Col
+                    xs={ { span: 8, order: 1, offset: 2 } }
+                    sm={ { span: 8, offset: 2 } }
+                    md={ { span: 6, offset: 3 } }
+                    lg={ { span: 5, order: 2, offset: 0 } }
+                    className="mt-5"
+                >
 
                     <Carousel
                         slides={ aboutContent.slides }
@@ -40,11 +46,11 @@ const About = () => {
 
             </Row>
 
-            <Row className="rulerRow">
+            {/* <Row className="rulerRow">
                 <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
                     <hr className="ruler" />
                 </Col>
-            </Row>
+            </Row> */}
 
 
         </section>

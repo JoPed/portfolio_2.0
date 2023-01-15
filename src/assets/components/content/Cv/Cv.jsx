@@ -24,18 +24,20 @@ const Cv = () => {
 
         if(isRemarksOpen){
             e.currentTarget.nextElementSibling.classList.remove("active");
+            document.querySelector('.cvList').scrollIntoView( { behavior: "smooth", block: "end", inline: "nearest" } );
+
 
         }
         else{
             e.currentTarget.nextElementSibling.classList.add("active");
-            e.target.nextElementSibling.scrollIntoView( { behavior: "smooth", block: "center", inline: "nearest" } );
+            e.target.nextElementSibling.scrollIntoView( { behavior: "smooth", block: "end", inline: "nearest" } );
         }
 
     }
 
 
     return (
-        <section id="cv" className="pb-3">
+        <section id="cv" className="page">
 
             <Container fluid="lg">
 
@@ -45,7 +47,6 @@ const Cv = () => {
                     {/* Image  */ }
                     <Col
                         xs={ { span: 2, order: 2 } }
-                        md={ { span: 3 } }
                         className="d-none d-md-block"
                     >
 
@@ -64,7 +65,7 @@ const Cv = () => {
                     <Col xs={ { span: 12, order: 1 } } md={ { span: 7, offset: 1 } } className="px-0">
                         <Row >
                             {/* Heading */ }
-                            <Col xs={ 12 } className="px-0" >
+                            <Col xs={ 12 } className="px-0 mt-5" >
 
                                 <Typewriter
                                     headingId="cvHeading"
@@ -75,7 +76,7 @@ const Cv = () => {
                             </Col>
 
                             {/* Underline  */ }
-                            <Col xs={ 12 } className="px-0 d-none d-md-block">
+                            <Col xs={ 12 } className="px-0 d-none d-md-block ">
                                 <hr className="ruler" />
                             </Col>
 
@@ -255,7 +256,7 @@ const Cv = () => {
                             { ' ' }
                             { isRemarksOpen ? <FontAwesomeIcon icon={ faAngleUp } /> : <FontAwesomeIcon icon={ faAngleDown } /> }</h3>
 
-                        <table className="cvTable otherRemarks" >
+                        <table className="cvTable otherRemarks mb-5" >
                             <tbody>
                                 {
                                     cvContent.otherRemarks.map( or => (
@@ -274,11 +275,11 @@ const Cv = () => {
                     </Col>
                 </Row>
 
-                <Row className="rulerRow">
+                {/* <Row className="rulerRow">
                     <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
                         <hr className="ruler" />
                     </Col>
-                </Row>
+                </Row> */}
 
             </Container>
 

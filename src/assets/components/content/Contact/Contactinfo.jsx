@@ -3,7 +3,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from 'react-bootstrap/Container';
 import FormText from 'react-bootstrap/FormText';
-import FormGroup from 'react-bootstrap/FormGroup';
 
 
 
@@ -80,7 +79,7 @@ const Contactinfo = () => {
 
   return (
 
-    <Container fluig="lg" className="contactContainer" id="contact">
+    <section className="contactContainer page" id="contact">
 
       <Row className="px-5 px-lg-0">
 
@@ -88,9 +87,9 @@ const Contactinfo = () => {
 
 
           <form className="contactForm" onSubmit={ handleSubmit( onSubmit ) }>
-            <h2 className="contactHeading">Kontakt formular</h2>
+            <h2 className="contactHeading">Kontakt</h2>
 
-            {/* //* Change this to use same concept as the notification in my hangman game */}
+            {/* //* Change this to use same concept as the notification in my hangman game */ }
             {/* { message && <div className="submissonInfo">
               <span>Information</span> <br />
               { message }
@@ -99,76 +98,63 @@ const Contactinfo = () => {
             <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
               stardard mail application.</p>
 
-            <FormGroup>
-              <Col className="mb-2 d-flex justify-content-center">
-                <label htmlFor="name" className="label">Navn</label>
+            <Row>
+
+              {/* <Col xs={ 12 } md={ 6 }>
+
+                  <label htmlFor="name" className="label">Navn</label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    className="input-name"
+                    placeholder="Skriv dit navn..."
+                    { ...register( 'name' ) } />
+
+                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center"> */}
+
+                    {/**If there is an error with the name field, show the error message */ }
+                    {/* { errors.name?.message }
+                  </FormText>
+              </Col> */}
+
+
+              <Col xs={ 12 }>
+
+                  <label htmlFor="email" className="label">Email</label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    className="input-email"
+                    placeholder="Skriv din mail..."
+                    { ...register( 'email' ) } />
+
+                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                    { errors.email?.message }
+                  </FormText>
               </Col>
 
+              <Col xs={12}>
+                  <label htmlFor="subject" className="label">Emne</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    className="input-subject"
+                    placeholder="Emnefelt"
+                    { ...register( 'subject' ) } />
+
+                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                    { errors.subject?.message }
+                  </FormText>
+              </Col>
+
+            </Row>      
+
+            <Row>
               <Col>
-                <input
-                  type="text"
-                  id="name"
-                  className="input-name"
-                  placeholder="Skriv dit navn..."
-                  { ...register( 'name' ) } />
-
-                <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
-
-                  {/**If there is an error with the name field, show the error message */ }
-                  { errors.name?.message }
-                </FormText>
-
-              </Col>
-            </FormGroup>
-
-
-            <FormGroup>
-
-              <Col className="mb-2 d-flex justify-content-center">
-                <label htmlFor="email" className="label">Email</label>
-              </Col>
-
-              <Col>
-                <input
-                  type="email"
-                  id="email"
-                  className="input-email"
-                  placeholder="Skriv din mail..."
-                  { ...register( 'email' ) } />
-              </Col>
-
-              <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
-                { errors.email?.message }
-              </FormText>
-
-            </FormGroup>
-
-
-            <FormGroup>
-              <Col className="mb-2 d-flex justify-content-center">
-                <label htmlFor="subject" className="label">Emne</label>
-              </Col>
-
-              <Col>
-                <input
-                  type="text"
-                  id="subject"
-                  className="input-subject"
-                  placeholder="Emnefelt"
-                  { ...register( 'subject' ) } />
-
-                <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
-                  { errors.subject?.message }
-                </FormText>
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col className="mb-2 d-flex justify-content-center">
                 <label htmlFor="txtArea" className="label">Besked</label>
-              </Col>
 
-              <Col>
                 <textarea
                   id="txtArea"
                   className="input-txtArea"
@@ -183,14 +169,18 @@ const Contactinfo = () => {
                 </FormText>
               </Col>
 
-            </FormGroup>
+            </Row>
 
-            <ReCAPTCHA
+            <Row>
+               <ReCAPTCHA
               ref={ recaptchaRef }
               sitekey={ _RECAPTCHAKEY }
               onChange={ updateRecaptchToken }
               className="d-flex justify-content-center"
             />
+            </Row>
+
+           
 
             <button type="submit" className="submit" disabled={ submitting }> { submitting ? 'Sender besked...' : 'Send besked' }</button>
 
@@ -199,13 +189,13 @@ const Contactinfo = () => {
 
       </Row>
 
-      <Row className="rulerRow">
+      <Row className="rulerRow ">
         <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
           <hr className="ruler" />
         </Col>
       </Row>
 
-    </Container>
+    </section>
 
   )
 }

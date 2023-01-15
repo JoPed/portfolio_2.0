@@ -9,17 +9,16 @@
 #navbar h1 {
   text-transform: uppercase;
   margin-bottom: 15px;
-  color: #F2F2F0;
+  color: #f2f2f0;
   font-size: 3rem;
   font-family: "BAHNSCHRIFT";
 }
 
 #header {
-  position: sticky;
-  top: 0;
   height: 150px;
   z-index: 1;
-  margin: 0 auto 100px auto;
+  position: sticky;
+  top: 0;
   -webkit-transform: translateX(0);
           transform: translateX(0);
   -webkit-transition: -webkit-transform 1s;
@@ -30,8 +29,8 @@
   /* #endregion */
 }
 #header.headerOnScroll {
-  background: -webkit-gradient(linear, left top, right top, from(#A67153), color-stop(50%, #F28705), to(#A64F03));
-  background: linear-gradient(90deg, #A67153 0%, #F28705 50%, #A64F03 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#a67153), color-stop(50%, #F28705), to(#A64F03));
+  background: linear-gradient(90deg, #a67153 0%, #F28705 50%, #A64F03 100%);
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
 }
@@ -69,27 +68,54 @@
   cursor: pointer;
   text-decoration: none;
   font-weight: 600;
-  color: #F2F2F0;
+  color: #f2f2f0;
   font-size: 2.5rem;
 }
 .navbar__menu li a:hover, .navbar__menu li a:active {
-  color: #F2F2F0;
+  color: #f2f2f0;
 }
 .navbar__menu li a.active {
   padding-bottom: 10px;
-  border-bottom: 3px solid #F2F2F0;
+  border-bottom: 3px solid #f2f2f0;
 }
 .navbar__menu li:not(:last-child) {
   margin-right: 5px;
 }
 
 #hamburger {
-  color: #F2F2F0;
+  color: #f2f2f0;
   display: none;
   padding: 15px;
 }
 #hamburger svg {
   font-size: 3.5rem;
+}
+
+.dots {
+  width: 20px;
+  position: fixed;
+  right: 1%;
+  top: 50%;
+}
+.dots ul {
+  list-style-type: none;
+}
+.dots ul li a {
+  display: inline-block;
+  text-decoration: none;
+  margin-block: 0.5rem;
+  background-color: #ccc;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  -webkit-transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+.dots ul li a.active {
+  width: 18px;
+  height: 18px;
+  -webkit-box-shadow: 0 0 1px 3px rgba(166, 113, 83, 0.5);
+          box-shadow: 0 0 1px 3px rgba(166, 113, 83, 0.5);
 }
 
 @media only screen and (max-width: 991px) {

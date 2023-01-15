@@ -18,6 +18,16 @@ html {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
+@supports(scrollbar-width: none){
+    *{
+        scrollbar-width: none;
+    }
+}
+
 
 //*Main elements
 /* #region Main elements */
@@ -29,6 +39,28 @@ img {
 
 #mainContent {
     background-color: $col_content;
+    position: relative;
+    height: calc(100vh - 150px);
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-overflow-style: none;
+}
+
+.page {
+    min-height: calc(100vh - 150px);
+    scroll-snap-align: start;
+
+    &.clicked {
+        scroll-snap-align: unset;
+    }
+}
+
+.footer{
+    scroll-snap-align: start;
+
+    &.clicked {
+        scroll-snap-align: unset;
+    }
 }
 
 /* #endregion */
@@ -102,13 +134,13 @@ h3 {
     top: 10%;
 }
 
-.cvList>li {
+.cvList > li {
     font-family: $font-title;
     font-size: 1.6rem;
     font-weight: bold;
 }
 
-.cvList>li li {
+.cvList > li li {
     font-family: $font-text;
     font-weight: normal;
 }
@@ -121,21 +153,33 @@ h3 {
 //Formtext error message
 .errorText {
     color: $lightGrey;
-    font-size: clamp(1rem, calc(8rem + .4vw), 1.6rem);;
-  }
+    font-size: clamp(1rem, calc(8rem + .4vw), 1.6rem);
+    ;
+}
 
 /* #endregion */
 
-.rulerRow {
+.ruler {
+    border: 1px solid $col_headings;
+}
+
+//Placing the ruler at the bottom of the page, regardless of the height of the section
+.contactContainer,
+#about {
+    display: flex;
+    flex-direction: column;
+
+    .rulerRow {
+        margin-top: auto;
+    }
+}
+
+#about .rulerRow{
     margin-top: 10rem;
 }
 
 .contactContainer .rulerRow{
-    margin-bottom: 10rem;
-}
-
-.ruler {
-    border: 1px solid $col_headings;
+    margin-top: 2rem;
 }
 
 //* About
@@ -154,7 +198,7 @@ h3 {
 
 //*Projects
 #projects {
-    margin-top: 10rem;
+    padding-bottom: 10rem;
 }
 
 /* #region  card */
@@ -218,7 +262,7 @@ h3 {
 //*CV
 /* #region  CV */
 #cv {
-    margin-top: 10rem;
+    padding-bottom: 13rem;
 
     .ruler:not(.rulerRow .ruler) {
         border: 2px solid $col_headings;
@@ -314,11 +358,10 @@ h3 {
 
 
 //*Kontakt formular
+
 .contactForm {
     max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 2rem;
-    margin-top: 10rem;
+    margin: 3rem auto 0;
 
 }
 
@@ -326,16 +369,19 @@ h3 {
     display: none;
 }
 
-.label{
+.label {
     font-size: 1.6rem;
+    text-align: center;
+    display: block;
+    margin-bottom: .5rem;
 }
 
 .input-email,
-.input-name, .input-subject {
+.input-subject {
     display: block;
-    width: 50%;
+    width: 45%;
     margin-inline: auto;
-    padding: .75rem .75rem;
+    padding: .5rem .5rem;
     font-size: 1.6rem;
     font-weight: 400;
     line-height: 1.5;
@@ -344,6 +390,7 @@ h3 {
     border: $col_input_Border;
     appearance: none;
     border-radius: .25rem;
+    margin-bottom: 3rem;
 
     &:focus {
         outline: 0;
@@ -351,13 +398,9 @@ h3 {
     }
 }
 
-.input-email {
-    margin-block: 1.6rem;
-}
-
 .input-email::placeholder,
-.input-name::placeholder ,
-.input-subject::placeholder{
+.input-name::placeholder,
+.input-subject::placeholder {
     font-style: italic;
 }
 
@@ -415,7 +458,7 @@ input[type='text'] {
     }
 }
 
-.submissonInfo{
+.submissonInfo {
     width: 50%;
     margin-inline: auto;
     margin-block: 3rem;
@@ -428,7 +471,7 @@ input[type='text'] {
     color: $col_mainText;
     border-radius: .25rem;
 
-    span{
+    span {
         font-weight: bold;
     }
 
@@ -471,7 +514,7 @@ input[type='text'] {
 
 @media only screen and (max-width: 485px) {
 
-    #projects .container-lg .row>.colOfCards.px-4 {
+    #projects .container-lg .row > .colOfCards.px-4 {
         padding-inline: 1rem !important;
     }
 

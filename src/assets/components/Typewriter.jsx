@@ -85,6 +85,7 @@ const Typewriter = ( { headingId, headline, enableScrollTrigger } ) => {
 
     const handleScrollTrigger = () => {
         ScrollTrigger.create( {
+            scroller: '#mainContent',
             trigger: `#${ headingId }`,
             start: "top bottom-=20px",
             end: "+=100px",
