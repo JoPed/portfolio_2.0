@@ -17,7 +17,7 @@ const NavLinks = ({onClick, showText = false}) => {
                             smooth={ true }
                             spy={ true }
                             onClick={() => onClick() }
-                            offset={nav.hasOwnProperty('offset') ? nav.offset : null}
+                            offset={-150}
                         >
                             { showText ? nav.text : '' }
                         </LinkScroll>

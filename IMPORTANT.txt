@@ -4,8 +4,9 @@ Opdater recaptcha til det domain hjemmesiden kører på.
 TODO: 
 1: Find en løsning på at animere scrollTop (både for projekter og cv)
 2: Lav Cv til downloadable pdf fil for mindre skærme (ca. 600px og ned)
-3: Test hjemmeside på tablet og mobil. 
-4: 
+3: Blur effect on responsive menu
+4: Test hjemmeside på tablet og mobil. 
+5: 
 
 SAVE keeping: 
 

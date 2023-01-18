@@ -36,6 +36,7 @@ const Navbar = () => {
 
     const handleScroll = () => {
 
+        console.log('first')
         document.querySelectorAll( ".page" )?.forEach( p => p.classList.remove( "clicked" ) );
         document.querySelector( ".footer" )?.classList.remove( "clicked" );
     }
@@ -44,12 +45,12 @@ const Navbar = () => {
 
         // window.addEventListener( "scroll", handleScroll );
 
-        document.querySelector( "#mainContent" ).addEventListener( "wheel", () => handleScroll );
+        document.querySelector( "#mainContent" ).addEventListener( "scroll", () => handleScroll );
 
 
         return () => {
             // window.removeEventListener( "scroll", handleScroll );
-            document.querySelector( "#mainContent" ).removeEventListener( "wheel", () => handleScroll );
+            // document.querySelector( "#mainContent" ).removeEventListener( "wheel", () => handleScroll );
         }
 
     }, [] )

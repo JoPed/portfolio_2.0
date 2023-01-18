@@ -18,7 +18,6 @@ export const projectsContent = {
             mdColOffset: 0,
             lgColOffset: 1,
             xlColOffset: 1,
-            className: "me-0 me-lg-4",
             uniqueID: "project1"
 
         },
@@ -58,7 +57,6 @@ export const projectsContent = {
             mdColOffset: 0,
             lgColOffset: 1,
             xlColOffset: 1,
-            className: "me-0 me-lg-4",
             uniqueID: "project3"
 
         },

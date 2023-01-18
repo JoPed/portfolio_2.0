@@ -3,7 +3,6 @@ import './assets/css/App.min.css';
 import "./assets/css/Navigation.min.css";
 
 import Content from './assets/pages/Content';
-import Navbar from './assets/components/Navigation/Navbar';
 import ProgressBar from "./assets/components/ProgressBar";
 
 function App () {
@@ -11,7 +10,6 @@ function App () {
 
   return (
     <>
-      <Navbar />
       <ProgressBar />
       <Content />
     </>

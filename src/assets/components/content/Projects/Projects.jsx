@@ -37,7 +37,7 @@ const Projects = () => {
             button.textContent = "Read Less";
 
             
-            let parent = document.querySelector("#mainContent");
+            let parent = document.querySelector("#projects");
             parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
 
 
@@ -47,7 +47,7 @@ const Projects = () => {
             details.style.setProperty( "display", "none" );
             button.textContent = "Read More";
 
-            let parent = document.querySelector("#mainContent");
+            let parent = document.querySelector("#projects");
             parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
 
         }

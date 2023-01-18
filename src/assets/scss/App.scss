@@ -18,9 +18,9 @@ html {
     padding: 0;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
+// ::-webkit-scrollbar {
+//     display: none;
+// }
 
 // @supports(scrollbar-width: none) {
 //     * {
@@ -39,15 +39,18 @@ img {
 
 #mainContent {
     position: relative;
-    height: calc(100vh - 150px);
+    max-height: 100vh;
     overflow-y: scroll;
+    scroll-snap-type: mandatory; //For older browsers
+    scroll-snap-points-y: repeat(100vh); //For older browsers
     scroll-snap-type: y mandatory;
-    -ms-overflow-style: none;
+    scroll-padding-top: 15rem;
 }
 
 .page {
-    min-height: calc(100vh - 150px);
+    height: calc(100vh - 150px);
     scroll-snap-align: start;
+    overflow-y: scroll;
 
     &.clicked {
         scroll-snap-align: unset;

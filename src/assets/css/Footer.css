@@ -8,6 +8,7 @@
 }
 .footer {
   width: 100%;
+  min-height: 200px;
   background-color: #464139;
   color: #f2f2f0;
   margin-top: auto;

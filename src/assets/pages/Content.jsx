@@ -4,6 +4,8 @@ import Cv from '../components/content/Cv/Cv';
 import Contactinfo from '../components/content/Contact/Contactinfo';
 import DotNavigation from '../components/Navigation/Dotnavigation';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navigation/Navbar';
+
 
 const Content = () => {
 
@@ -11,6 +13,7 @@ const Content = () => {
         <main className='container-fluid px-0' id="mainContent">
 
             <DotNavigation />
+            <Navbar />
 
             <About />
             <Projects />
