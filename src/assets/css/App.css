@@ -25,6 +25,15 @@ html {
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+@supports (scrollbar-width: none) {
+  * {
+    scrollbar-width: none;
+  }
+}
 /* #region Main elements */
 img {
   display: block;
@@ -350,6 +359,7 @@ h3 {
 /* #endregion */
 #contact {
   background-color: #464139;
+  padding-bottom: 2rem;
 }
 
 .contactForm {
@@ -384,7 +394,7 @@ h3 {
      -moz-appearance: none;
           appearance: none;
   border-radius: 0.25rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 .input-email:focus,
 .input-subject:focus {

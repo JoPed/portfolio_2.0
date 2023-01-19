@@ -30,7 +30,7 @@ const Cv = () => {
         }
         else{
             e.currentTarget.nextElementSibling.classList.add("active");
-            e.target.nextElementSibling.scrollIntoView( { behavior: "smooth", block: "end", inline: "nearest" } );
+            e.target.nextElementSibling.scrollIntoView( { behavior: "smooth", block: "center", inline: "nearest" } );
         }
 
     }

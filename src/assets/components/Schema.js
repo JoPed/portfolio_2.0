@@ -2,11 +2,11 @@ import * as yup from "yup";
 
 //*Yup schema used for form validation in Modal.js
 export const Schema = yup.object().shape({
-    name: yup
-    .string() 
-    .required("Navn skal udfyldes"),
+    // name: yup
+    // .string() 
+    // .required("Navn skal udfyldes"),
 
-    email: yup
+    mail: yup
     .string()
     .email("Forkert mail format")
     .required("Email skal udfyldes"),

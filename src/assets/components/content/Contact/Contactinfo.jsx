@@ -13,12 +13,19 @@ import { Schema } from '../../Schema';
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
+import Notification from "../../Notification";
+
 const Contactinfo = () => {
 
   // Creating a useState to store the datasubmitted from the form. Starting value of empty object
   const [ submitting, setSubmitting ] = useState( false );
-  const [ message, setMessage ] = useState();
+  const [ message, setMessage ] = useState( {
+    msg: '',
+    class: ''
+  } );
+  const [ isVisible, setIsVisible ] = useState( false );
   const [ recaptchaToken, setRecaptchaToken ] = useState();
+  const notificationRef = useRef();
 
   const _SPARKFORMID = '1lIsDWsS';
   const _FORMSPARKURL = `https://submit-form.com/${ _SPARKFORMID }`;
@@ -29,8 +36,7 @@ const Contactinfo = () => {
   const { register, handleSubmit, formState: { errors, isSubmitSuccessful }, reset } = useForm( {
     resolver: yupResolver( Schema ),
     defaultValues: {
-      name: '',
-      email: '',
+      mail: '',
       subject: '',
       textArea: ''
     }
@@ -43,33 +49,44 @@ const Contactinfo = () => {
 
     const payload = {
 
-      name: formData.name,
-      email: formData.email,
+      email: formData.mail,
       subject: formData.subject,
       message: formData.textArea,
       "g-recaptcha-response": recaptchaToken
 
     };
 
-    console.log( payload )
-
-    try {
-      axios.post( _FORMSPARKURL, payload );
-      setMessage( 'Beskeden er blevet sendt. Jeg vil vende tilbage hurtigst muligt.' )
+    axios.post( _FORMSPARKURL, payload ).then( () => {
+      setMessage( {
+        msg: 'Beskeden er blevet sendt. Jeg vil vende tilbage hurtigst muligt.',
+        class: 'success'
+      } )
       resetForm();
       recaptchaRef.current.reset();
+    } ).catch( () => {
+      setMessage( {
+        msg: `Der opstod en fejl og beskeden blev ikke sendt.\n\n Prøv igen eller prøv at send en mail direkte ved at klikke på mail ikonet.`,
+        class: 'failed'
+      } )
 
-    } catch ( error ) {
-      console.log( error )
-      setMessage( 'Der opstod en fejl og beskeden blev ikke sendt. Prøv igen eller prøv at send en mail direkte ved at klikke på mail ikonet.' )
-    }
-
-    setSubmitting( false );
+    } ).finally( () => {
+      setSubmitting( false );
+      setIsVisible( true );
+    } )
 
   }
 
+  const onInvalid = () => {
+    setIsVisible( true );
+    setMessage( {
+      msg: `Der opstod en fejl og beskeden blev ikke sendt.\n\nPrøv igen eller prøv at send en mail direkte ved at klikke på mail ikonet.`,
+      class: 'failed'
+
+    } )
+  }
+
   const resetForm = () => {
-    reset( { name: '', email: '', subject: '', textArea: '' } );
+    reset( { mail: '', subject: '', textArea: '' } );
   }
 
   const updateRecaptchToken = ( token ) => {
@@ -80,6 +97,8 @@ const Contactinfo = () => {
 
     <section className="page" id="contact">
 
+      {/* //* Change this to use same concept as the notification in my hangman game */ }
+
       <Container fluid="lg">
 
         <Row className="px-5 px-lg-0">
@@ -87,14 +106,8 @@ const Contactinfo = () => {
           <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1, offset: 1 } } className="px-4">
 
 
-            <form className="contactForm" onSubmit={ handleSubmit( onSubmit ) }>
+            <form className="contactForm" id="contactForm" onSubmit={ handleSubmit( onSubmit, onInvalid ) }>
               <h2 className="contactHeading">Kontakt</h2>
-
-              {/* //* Change this to use same concept as the notification in my hangman game */ }
-              {/* { message && <div className="submissonInfo">
-                <span>Information</span> <br />
-                  { message }
-                </div> } */}
 
               <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
                 stardard mail application.</p>
@@ -103,17 +116,17 @@ const Contactinfo = () => {
 
                 <Col xs={ 12 }>
 
-                  <label htmlFor="email" className="label">Email</label>
+                  <label htmlFor="e-mail" className="label">Email</label>
 
                   <input
-                    type="email"
-                    id="email"
+                    type="text"
+                    id="e-mail"
                     className="input-email"
                     placeholder="Skriv din mail..."
-                    { ...register( 'email' ) } />
+                    { ...register( 'mail' ) } />
 
-                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
-                    { errors.email?.message }
+                  <FormText className="ms-1 ms-md-0 mt-1 mb-5 errorText d-flex justify-content-center">
+                    { errors.mail?.message }
                   </FormText>
                 </Col>
 
@@ -126,7 +139,7 @@ const Contactinfo = () => {
                     placeholder="Emnefelt"
                     { ...register( 'subject' ) } />
 
-                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                  <FormText className="ms-1 ms-md-0 mt-1 mb-5 errorText d-flex justify-content-center">
                     { errors.subject?.message }
                   </FormText>
                 </Col>
@@ -146,7 +159,7 @@ const Contactinfo = () => {
                     { ...register( 'textArea' ) }
                   />
 
-                  <FormText className="ms-1 ms-md-0 mt-2 mb-5 errorText d-flex justify-content-center">
+                  <FormText className="ms-1 ms-md-0 mt-1 mb-5 errorText d-flex justify-content-center">
                     { errors.textArea?.message }
                   </FormText>
                 </Col>
@@ -164,7 +177,19 @@ const Contactinfo = () => {
 
 
 
-              <button type="submit" className="submit" disabled={ submitting }> { submitting ? 'Sender besked...' : 'Send besked' }</button>
+              <button type="submit" className="submit" form="contactForm" disabled={ submitting }> { submitting ? 'Sender besked...' : 'Send besked' }</button>
+
+              <Row>
+                <Col className="mt-5">
+                  <Notification
+                    message={ message.msg }
+                    notificationRef={ notificationRef }
+                    customClass={ message.class }
+                  />
+                </Col>
+              </Row>
+
+
 
             </form>
           </Col>

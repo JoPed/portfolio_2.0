@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "BAHNSCHRIFT";
+  src: url("/assets/fonts/BAHNSCHRIFT.TTF");
+}
+@font-face {
+  font-family: "SourceCodePro";
+  src: url("/assets/fonts/SourceCodePro.ttf");
+}
+.notification {
+  display: none;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+  width: 75%;
+  padding: 20px;
+  border-radius: 0.4rem;
+  color: #f2f2f0;
+  z-index: 1000;
+  font-size: clamp(1.5rem, 1rem + 0.6vw, 2rem);
+  white-space: pre-line;
+}
+.notification span {
+  font-weight: 600;
+}
+
+.notification.active {
+  display: block;
+}
+
+.notification.success {
+  background-color: #3e4639;
+}
+
+.notification.failed {
+  background-color: #46393e;
+}/*# sourceMappingURL=Notification.css.map */

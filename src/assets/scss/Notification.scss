@@ -1,0 +1,31 @@
+@import "variables";
+
+.notification{
+    display: none;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+    width: 75%;
+    padding: 20px;
+    border-radius: .4rem;
+    color: $col_mainText;
+    z-index: 1000;
+    font-size: clamp(1.5rem, calc(1rem + .6vw), 2rem);
+    white-space: pre-line;
+
+    span{
+        font-weight: 600;
+    }
+
+}
+
+.notification.active{
+    display: block;
+}
+
+.notification.success{
+   background-color: $col_success_background;
+}
+
+.notification.failed{
+    background-color: $col_failed_background;
+ }

@@ -18,15 +18,15 @@ html {
     padding: 0;
 }
 
-// ::-webkit-scrollbar {
-//     display: none;
-// }
+::-webkit-scrollbar {
+    display: none;
+}
 
-// @supports(scrollbar-width: none) {
-//     * {
-//         scrollbar-width: none;
-//     }
-// }
+@supports(scrollbar-width: none) {
+    * {
+        scrollbar-width: none;
+    }
+}
 
 
 //*Main elements
@@ -363,6 +363,7 @@ h3 {
 //*Kontakt formular
 #contact {
     background-color: $col_content2;
+    padding-bottom: 2rem;
 }
 
 .contactForm {
@@ -396,7 +397,7 @@ h3 {
     border: $col_input_Border;
     appearance: none;
     border-radius: .25rem;
-    margin-bottom: 3rem;
+    margin-bottom: .5rem;
 
     &:focus {
         outline: 0;
