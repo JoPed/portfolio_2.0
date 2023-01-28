@@ -230,7 +230,7 @@ const Cv = () => {
                             xl={ { span: 5, offset: 1 } }
                             className="mt-5"
                         >
-                            <h3>Personlige kompetancer</h3>
+                            <h3>Personlige kompetencer</h3>
                             <ul className="cvList">
                                 {
                                     cvContent.personalSkils.map( ps => (
