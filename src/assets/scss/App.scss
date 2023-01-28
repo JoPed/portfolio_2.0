@@ -491,7 +491,7 @@ input[type='text'] {
         flex-direction: column;
 
         li {
-            padding: 8px;
+            padding-block: 8px;
         }
     }
 
@@ -503,7 +503,7 @@ input[type='text'] {
     #aboutHeading,
     #projectsHeading,
     #cvHeading,
-    .contactHeading {
+    #contactHeading {
         margin-inline: auto;
     }
 
@@ -516,10 +516,15 @@ input[type='text'] {
 
 @media only screen and (max-width: 767px) {
 
-    .slides {
+    .slideshow {
         max-width: 420px;
         margin-inline: auto;
     }
+
+    #cv .mainText{
+        text-align: center;
+    }
+
 
 }
 
@@ -527,18 +532,22 @@ input[type='text'] {
 
     #projects .container-lg .row > .colOfCards.px-4 {
         padding-inline: 1rem !important;
-    }
+    }  
 
     /* #region  Text */
     #aboutHeading,
     #projectsHeading,
     #cvHeading,
-    .contactHeading {
+    #contactHeading {
         margin-inline: 0;
+    }
+    
+    #personalInfoList li {
+        text-align: left;
     }
 
     #cv .mainText{
-        text-align: center;
+        text-align: left;
     }
 
     /* #endregion */

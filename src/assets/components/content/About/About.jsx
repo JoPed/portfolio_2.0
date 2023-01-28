@@ -21,7 +21,7 @@ const About = () => {
                             headline={ aboutContent.headline }
                         />
 
-                        <Row>
+                        <Row className="mt-5">
                             <Col>
                                 <article>
                                     <p className="mainText">{ aboutContent.paragraphs.map( item => item ) }</p>

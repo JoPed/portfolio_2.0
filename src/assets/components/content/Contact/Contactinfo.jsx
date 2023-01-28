@@ -124,7 +124,7 @@ const Contactinfo = () => {
               <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
                 stardard mail application.</p>
 
-              <Row>
+              <Row className="mt-5">
 
                 <Col xs={ 12 } sm={6}>
 

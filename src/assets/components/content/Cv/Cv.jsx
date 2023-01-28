@@ -42,7 +42,7 @@ const Cv = () => {
 
                     {/* Image  */ }
                     <Col
-                    className='d-none d-md-block'
+                        className='d-none d-md-block'
                         xs={ { span: 2, order: 2 } }
                     >
                         <picture>
@@ -74,7 +74,7 @@ const Cv = () => {
                             </Col>
 
                             {/* personal info */ }
-                            <Col md={ 12 } >
+                            <Col md={ 12 } className="px-0" >
                                 <ul id="personalInfoList">
                                     {
                                         cvContent.info.map( i => (
@@ -98,15 +98,15 @@ const Cv = () => {
                 </Row>
 
                 <Row className='mt-5 d-block d-md-none'>
-                    <Col xs={{span: 12}} sm={{span: 10, offset: 1}} className="">
-                        <p className='mainText text-center'>
-                            For at give den bedst mulige bruger oplevelse, kan CV'et ikke ses på mindre skærme. 
-                            Tilgengæld kan du downloade det som pdf ved at klikke på knappen. 
+                    <Col xs={ { span: 12 } } sm={ { span: 10, offset: 1 } } className="">
+                        <p className='mainText'>
+                            For at give den bedst mulige bruger oplevelse, kan CV'et ikke ses på mindre skærme. <br /> <br />
+                            Tilgengæld kan du downloade det som pdf ved at klikke på knappen.
                         </p>
                     </Col>
 
-                    <Col xs={{span: 8, offset: 2}}>
-                        <a className='download_btn' download={"CV_Jonas_Bjørn_Pedersen"} href="./assets/CV.pdf">Download CV</a>
+                    <Col xs={ { span: 8, offset: 2 } }>
+                        <a className='download_btn' download={ "CV_Jonas_Bjørn_Pedersen" } href="./assets/CV.pdf">Download CV</a>
                     </Col>
                 </Row>
 
