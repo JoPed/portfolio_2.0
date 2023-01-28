@@ -11,11 +11,10 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 import Typewriter from "../../Typewriter";
 import { projectsContent } from "./ProjectsContent";
-import { useEffect } from "react";
 
 const Projects = () => {
 
-    const cardDetailsRef = useRef( [] );    
+    const cardDetailsRef = useRef( [] );
 
     const showCardDetails = ( event, index ) => {
 
@@ -36,8 +35,8 @@ const Projects = () => {
             details.style.setProperty( "display", "block" );
             button.textContent = "Read Less";
 
-            
-            let parent = document.querySelector("#projects");
+
+            let parent = document.querySelector( "#projects" );
             parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
 
 
@@ -47,7 +46,7 @@ const Projects = () => {
             details.style.setProperty( "display", "none" );
             button.textContent = "Read More";
 
-            let parent = document.querySelector("#projects");
+            let parent = document.querySelector( "#projects" );
             parent.scrollTop = details.parentElement.offsetTop - parent.offsetTop;
 
         }
@@ -67,7 +66,6 @@ const Projects = () => {
                         <Typewriter
                             headingId="projectsHeading"
                             headline={ projectsContent.headline }
-                            enableScrollTrigger={ true }
                         />
 
                     </Col>
@@ -86,10 +84,10 @@ const Projects = () => {
                                 lg={ { span: 5, offset: card.hasOwnProperty( "lgColOffset" ) ? card.lgColOffset : "" } }
                                 xl={ { span: 4, offset: card.xlColOffset } }
                                 key={ card.uniqueID }
-                                className={ `mb-4  px-5 px-sm-3 px-md-4 px-lg-0 colOfCards ${ card.hasOwnProperty( "className" ) ? card.className : "" }` }
+                                className={ `mb-4  px-3 px-md-4 px-xl-0 colOfCards  ${ card.hasOwnProperty( "className" ) ? card.className : "" }` }
                             >
 
-                                <section className="card" id={card.uniqueID}>
+                                <section className="card" id={ card.uniqueID }>
 
                                     <picture>
                                         <source media="(max-width: 575px)" srcSet={ card.mobileImg } />
@@ -132,6 +130,12 @@ const Projects = () => {
                         ) )
                     }
 
+                </Row>
+
+                <Row className="rulerRow ">
+                    <Col xs={ { span: 10, offset: 1 }}>
+                        <hr className="ruler" />
+                    </Col>
                 </Row>
             </Container>
 

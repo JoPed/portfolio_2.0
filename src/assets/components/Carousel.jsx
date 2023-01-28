@@ -15,6 +15,8 @@ const Carousel = ( { slides, trigger } ) => {
 
     const showSlides = () => {
 
+        if(slideRef.current === null) return;
+
         slideRef.current.forEach( s => s.style.display = "none" );
 
         slideIndex.current++;
@@ -59,6 +61,7 @@ const Carousel = ( { slides, trigger } ) => {
 
         return () => {
             resetTimeOut();
+            slideRef.current = null;
         }
 
     }, [] );

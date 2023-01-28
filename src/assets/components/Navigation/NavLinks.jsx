@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as LinkScroll } from "react-scroll";
+import { NavLink } from 'react-router-dom';
 
 import { NavigationContent } from "./NavigationContent";
 
@@ -11,16 +11,13 @@ const NavLinks = ({onClick, showText = false}) => {
             {
                 NavigationContent.map( nav => (
                     <li key={nav.id}>
-                        <LinkScroll
-                            containerId='mainContent'
+                        <NavLink
                             to={ nav.to }
-                            smooth={ true }
-                            spy={ true }
                             onClick={() => onClick() }
                             offset={-150}
                         >
                             { showText ? nav.text : '' }
-                        </LinkScroll>
+                        </NavLink>
                     </li>
                 ) )
             }

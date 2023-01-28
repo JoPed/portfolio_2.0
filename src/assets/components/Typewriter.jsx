@@ -2,18 +2,26 @@ import React, { useEffect, useState } from 'react';
 
 
 import { gsap } from "gsap/all";
-import { ScrollTrigger } from "gsap/all";
 
-const Typewriter = ( { headingId, headline, enableScrollTrigger } ) => {
+const Typewriter = ( { headingId, headline } ) => {
 
-    const [ isReadyToAnimate, setIsReadyToAnimate ] = useState( false );
+    const [ dimensions, setDimensions ] = useState( window.innerWidth );
 
-    const [headingSelector] = useState(`.${ headingId }`);
+    const [ headingSelector ] = useState( `.${ headingId }` );
 
-    gsap.registerPlugin( ScrollTrigger );
+    const breakpoint = 420;
 
+    const handleResize = () => {
+        setDimensions( window.innerWidth );
+    }
 
-    const setInitialValues = ( ) => {
+    useEffect( () => {
+        window.addEventListener( 'resize', handleResize )
+
+        return () => window.removeEventListener( 'resize', handleResize )
+    }, [] )
+
+    const setInitialValues = () => {
 
         gsap.set( headingSelector + "__blinkCursorEnd", {
             backgroundColor: "transparent",
@@ -83,40 +91,18 @@ const Typewriter = ( { headingId, headline, enableScrollTrigger } ) => {
         } )
     }
 
-    const handleScrollTrigger = () => {
-        ScrollTrigger.create( {
-            scroller: '#mainContent',
-            trigger: `#${ headingId }`,
-            start: "top bottom-=20px",
-            end: "+=100px",
-            onEnter: () => {
-                setIsReadyToAnimate( true );
-                setInitialValues( );
-            },
-            onLeaveBack: () => {
-                setIsReadyToAnimate( false )
-            }
-        } )
-    }
-
     useEffect( () => {
 
-        if ( enableScrollTrigger ) {
-            handleScrollTrigger();
-        }
-        else {
-            setInitialValues();
-        }
+        setInitialValues();
 
     }, [] );
 
-    return (
+    return dimensions <= breakpoint ? <h2>{ headline }</h2> : (
         <h2
             id={ headingId }
         >
-
             <span className={ headingId + "__blinkCursorStart" } />
-            { isReadyToAnimate || headingId === "aboutHeading" ? headline : "" }
+            { headline }
             <span className={ headingId + "__blinkCursorEnd" } />
 
         </h2>

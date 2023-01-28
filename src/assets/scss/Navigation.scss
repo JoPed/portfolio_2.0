@@ -15,7 +15,7 @@
     z-index: 1;
     position: sticky;
     top: 0;
-    background-color: $col_content;
+    background-color: $col_content2;
 }
 
 #navbar {
@@ -44,7 +44,8 @@
 
             &:hover,
             &:active {
-                color: $col_navbar_items-highlighted;
+                padding-bottom: 10px;
+                border-bottom: 3px solid $col_navbar_items-highlighted;
             }
 
             &.active {
@@ -130,5 +131,6 @@
 
     .navbar__menu.active {
         left: 0;
+        backdrop-filter: blur(5px);
     }
 }

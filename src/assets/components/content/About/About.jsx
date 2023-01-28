@@ -19,7 +19,6 @@ const About = () => {
                         <Typewriter
                             headingId="aboutHeading"
                             headline={ aboutContent.headline }
-                            enableScrollTrigger={ false }
                         />
 
                         <Row>
@@ -46,6 +45,12 @@ const About = () => {
 
                     </Col>
 
+                </Row>
+
+                <Row className="rulerRow ">
+                    <Col xs={ { span: 10, offset: 1 }}>
+                        <hr className="ruler" />
+                    </Col>
                 </Row>
 
             </Container>

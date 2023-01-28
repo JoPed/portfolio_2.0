@@ -1,18 +1,11 @@
-
-import { useState, useRef, useEffect } from "react";
+import "../../css/Navigation.min.css";
+import { useState, useRef } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import NavLinks from "./NavLinks";
 
-import { gsap } from "gsap/all";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
-
-
 const Navbar = () => {
-
-    gsap.registerPlugin( ScrollToPlugin, ScrollTrigger );
 
     /* #region  Usestates */
     const [ isMenuOpen, setIsMenuOpen ] = useState( false );
@@ -23,49 +16,9 @@ const Navbar = () => {
     /* #region  Menu handling */
     const handleClick = () => setIsMenuOpen( !isMenuOpen );
 
-    const closeMenu = () => {
-        setIsMenuOpen( false );
+    const closeMenu = () => setIsMenuOpen( false );    
 
-        console.log( document.querySelectorAll( ".page" ) );
-        document.querySelectorAll( ".page" )?.forEach( p => p.classList.add( "clicked" ) );
-        document.querySelector( ".footer" )?.classList.add( "clicked" );
-    }
-
-
-    /* #endregion */
-
-    const handleScroll = () => {
-
-        console.log('first')
-        document.querySelectorAll( ".page" )?.forEach( p => p.classList.remove( "clicked" ) );
-        document.querySelector( ".footer" )?.classList.remove( "clicked" );
-    }
-
-    useEffect( () => {
-
-        // window.addEventListener( "scroll", handleScroll );
-
-        document.querySelector( "#mainContent" ).addEventListener( "scroll", () => handleScroll );
-
-
-        return () => {
-            // window.removeEventListener( "scroll", handleScroll );
-            // document.querySelector( "#mainContent" ).removeEventListener( "wheel", () => handleScroll );
-        }
-
-    }, [] )
-
-    useEffect( () => {
-
-        /* Removing the class on every render to make sure the header only has default values. 
-            This cannot happen in the other useEffect, since that will run every time the y scroll pos changes. 
-        */
-        if ( headerRef.current.classList.contains( "headerOnScroll" ) ) {
-            headerRef.current.classList.remove( "headerOnScroll" );
-        }
-
-
-    }, [] )
+    /* #endregion */   
 
 
     return (

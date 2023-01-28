@@ -14,11 +14,11 @@ const Footer = () => {
         <footer className="footer">
 
             <Row>
-                <Col xs={ { span: 12 } } lg={ { span: 4 } } >
+                    <Col xs={ 12 } sm={ 6 }>
 
                     <section className="contactInfo">
 
-                        <h2>Kontakt</h2>
+                        <h2>Kontakt info</h2>
                         <ul>
                             <li>Jonas Bjørn Pedersen</li>
                             <li><FontAwesomeIcon icon={ faEnvelope } /> <a target="_blank" href="mailto:jonasbjoern@gmail.com"> jonasbjoern@gmail.com</a></li>
@@ -29,12 +29,7 @@ const Footer = () => {
                     </section>
 
                 </Col>
-
-                <Col xs={ { span: 12 } } lg={ { span: 4 } } className="d-flex flex-column justify-content-center">
-                    <p><span>Website by</span> <span>Jonas Bjørn Pedersen &copy;</span></p>
-                </Col>
-
-                <Col xs={ { span: 12 } } lg={ { span: 4 } } >
+                <Col xs={ 12 } sm={ 6 } >
 
                     <section className="socials">
                         <h2>Links</h2>
@@ -50,9 +45,6 @@ const Footer = () => {
 
                 </Col>
             </Row>
-
-
-
         </footer>
     )
 }

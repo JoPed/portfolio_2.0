@@ -1,24 +1,24 @@
 export const NavigationContent = [
     {
-        to: 'about',
+        to: '/',
         text: 'Om mig',
         id: "navlink1"
 
     }, 
     {
-        to: 'projects',
+        to: '/projects',
         text: 'Projekter',
         id: "navlink2"
 
     },
     {
-        to: 'cv',
+        to: '/cv',
         text: 'CV',
         id: "navlink3"
 
     }, 
     {
-        to: 'contact',
+        to: '/contact',
         text: 'Kontakt',
         id: "navlink4"
 

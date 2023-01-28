@@ -14,6 +14,7 @@ import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import Notification from "../../Notification";
+import Typewriter from "../../Typewriter";
 
 const Contactinfo = () => {
 
@@ -101,20 +102,31 @@ const Contactinfo = () => {
 
       <Container fluid="lg">
 
-        <Row className="px-5 px-lg-0">
+        <Row className="px-0 px-md-5 px-lg-0">
 
-          <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1, offset: 1 } } className="px-4">
-
+          <Col xs={ { span: 12, order: 2 } } lg={ { span: 10, order: 1 } } className="px-4">
 
             <form className="contactForm" id="contactForm" onSubmit={ handleSubmit( onSubmit, onInvalid ) }>
-              <h2 className="contactHeading">Kontakt</h2>
+
+              <Row className="px-0">
+
+                <Col xs={ { span: 12 } } lg={ { span: 10} } className="mt-5 ">
+
+                  <Typewriter
+                    headingId="contactHeading"
+                    headline={ 'Kontakt' }
+                  />
+
+                </Col>
+
+              </Row>
 
               <p className="mainText">Brug af kontakt formular skal ske på tablet eller pc.<br /> Ellers brug mail ikonet ovenover der åbner din
                 stardard mail application.</p>
 
               <Row>
 
-                <Col xs={ 12 }>
+                <Col xs={ 12 } sm={6}>
 
                   <label htmlFor="e-mail" className="label">Email</label>
 
@@ -130,7 +142,7 @@ const Contactinfo = () => {
                   </FormText>
                 </Col>
 
-                <Col xs={ 12 }>
+                <Col xs={ 12 } sm={6}>
                   <label htmlFor="subject" className="label">Emne</label>
                   <input
                     type="text"
@@ -147,7 +159,7 @@ const Contactinfo = () => {
               </Row>
 
               <Row>
-                <Col>
+                <Col lg={ 12 }>
                   <label htmlFor="txtArea" className="label">Besked</label>
 
                   <textarea
@@ -197,7 +209,7 @@ const Contactinfo = () => {
         </Row>
 
         <Row className="rulerRow ">
-          <Col xs={ 12 } md={ { span: 10, offset: 1 } }>
+          <Col xs={ { span: 10, offset: 1 }} >
             <hr className="ruler" />
           </Col>
         </Row>
