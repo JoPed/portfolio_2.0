@@ -1,10 +1,12 @@
 @import 'variables';
 
-.footer {
-    width: 100%;
-    background-color: $col_content2;
-    color: $col_mainText;
+.footerContainer{
     margin-top: auto;
+    background-color: $col_content2;
+}
+
+.footer {
+    color: $col_mainText;
     padding-inline: .75rem;
     padding-block: 1.25rem;
 
@@ -31,12 +33,22 @@
 .contactInfo ul {
     list-style-type: none;
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
     font-size: 1.6rem;
 
     svg {
         font-size: 2rem;
         vertical-align: middle;
+    }
+
+    li:nth-child(1){
+        text-align: center;
+    }
+
+    li span{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
     }
 }
 

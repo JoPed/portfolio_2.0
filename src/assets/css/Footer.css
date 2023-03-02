@@ -6,11 +6,13 @@
   font-family: "SourceCodePro";
   src: url("/assets/fonts/SourceCodePro.ttf");
 }
-.footer {
-  width: 100%;
-  background-color: #464139;
-  color: #f2f2f0;
+.footerContainer {
   margin-top: auto;
+  background-color: #464139;
+}
+
+.footer {
+  color: #f2f2f0;
   padding-inline: 0.75rem;
   padding-block: 1.25rem;
 }
@@ -36,12 +38,20 @@
 .contactInfo ul {
   list-style-type: none;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   font-size: 1.6rem;
 }
 .contactInfo ul svg {
   font-size: 2rem;
   vertical-align: middle;
+}
+.contactInfo ul li:nth-child(1) {
+  text-align: center;
+}
+.contactInfo ul li span {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
 .contactInfo h2 {
